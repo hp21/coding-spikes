@@ -132,6 +132,17 @@ public class CyclicListTest {
         actual = tester.checkLists(aList, bList);
         Assert.assertThat(actual, CoreMatchers.equalTo(true));
 
+        aList = Lists.newArrayList(1, 1, 2, 2);
+        bList = Lists.newArrayList(2, 1, 1, 2);
+        actual = tester.checkLists(aList, bList);
+        Assert.assertThat(actual, CoreMatchers.equalTo(true));
+
+        aList = Lists.newArrayList(1, 1, 2, 2);
+        bList = Lists.newArrayList(2, 2, 1, 1);
+        actual = tester.checkLists(aList, bList);
+        Assert.assertThat(actual, CoreMatchers.equalTo(true));
+
+        
     }
 
     @Test()
