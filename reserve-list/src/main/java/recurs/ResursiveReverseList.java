@@ -5,10 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA. User: u292148 Date: 2013.05.06. Time: 12:53 To
- * change this template use File | Settings | File Templates.
+ * Created Date: 2013.05.06. Time: 12:53
  */
-public class ResursiveReverseList {
+public class ResursiveReverseList<T> {
 
     final List<?> list;
 

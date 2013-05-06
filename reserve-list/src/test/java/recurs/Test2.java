@@ -9,6 +9,8 @@ import org.junit.Test;
 
 import com.google.common.collect.Lists;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 /**
  * Unit test for simple App.
  */
@@ -29,7 +31,7 @@ public class Test2 {
         final List<String> reverseList = (List<String>) resursiveReverseList.reverse();
 
         for (int i = 0; i < list.size(); i++) {
-            Assert.assertThat(reverseList.get(i), CoreMatchers.equalTo(list.get(list.size() - i - 1)));
+            Assert.assertThat(reverseList.get(i), equalTo(list.get(list.size() - i - 1)));
         }
 
         System.out.println("got: " + reverseList);
