@@ -18,12 +18,12 @@ public class ResursiveReverseList3<T> {
     public List<?> reverse() {
 
         final Iterator<?> iterator = list.iterator();
-        final List<Object> reverseList = reverse(iterator);
+        final List<?> reverseList = reverse(iterator);
         return reverseList;
     }
 
     private List<Object> reverse(Iterator<?> iterator) {
-        List ret;
+        List<Object> ret;
 
         if (noMoreElement(iterator)) {
             ret = new ArrayList<Object>(); // stop condition
