@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class ResursiveReverseList<T> {
 
-    final List<?> list;
+    private final List<?> list;
 
     public ResursiveReverseList(List<?> list) {
         this.list = list;

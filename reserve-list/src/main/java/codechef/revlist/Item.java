@@ -11,7 +11,7 @@ public class Item<T> {
 
     private Item<T> next;
 
-    private T obj;
+    private final T obj;
 
     public Item(T obj) {
         this.obj = obj;
