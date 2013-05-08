@@ -1,0 +1,14 @@
+http://www.home.hs-karlsruhe.de/~pach0003/informatik_1/aufgaben/en/recursion.html
+
+degree of difficulty: 1
+
+Implement a simple calculator which evaluates arithmetic expressions given as a String. The expression should only consists of numbers 0 to 9, parenthesis, and the binary and unary operators + and -. White spaces are ignored. Implement a recursive descent parser for reading in the String.
+
+The syntax is given as the following EBNF:
+
+expression = term, [ "+" | "-" , term ] ;
+term     = "(",  term, ")"
+            | "0" | "1" | ... | "9" ;
+The follwing strings are valid: "1", "((2))", "2 + 3", "( (4) - 5 +7)".
+
+Inspect the methods of a String and the class Character
