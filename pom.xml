@@ -20,6 +20,7 @@
         <module>reserve-list</module>
         <module>cyclic-list</module>
         <module>small-tasks</module>
+        <module>queen</module>
     </modules>
 
 
