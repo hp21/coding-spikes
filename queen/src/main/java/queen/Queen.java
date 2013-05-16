@@ -43,15 +43,11 @@ public class Queen {
                         chess[rowIndex][level] = 0;
                         continue;
                     }
-                } /*else {
-                    // last column
-                    status = true;
-                }*/
-
-                // no more column
+                }
 
                 if (isLastColumn(level)) {
                     printChess();
+                    initChess();
                     status = true;
                     break;
                 }
