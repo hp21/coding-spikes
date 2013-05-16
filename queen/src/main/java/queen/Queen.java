@@ -52,17 +52,16 @@ public class Queen {
                     break;
                 }
 
-                if (outmostLevel(level, status)) {
+                if (lowLevelSolutionFound(level, status)) {
                     break; // find next solution
                 }
-
             }
         }
 
         return status;
     }
 
-    private boolean outmostLevel(int level, boolean status) {
+    private boolean lowLevelSolutionFound(int level, boolean status) {
         return status && level != 0;
     }
 
