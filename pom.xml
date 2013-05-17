@@ -21,6 +21,7 @@
         <module>cyclic-list</module>
         <module>small-tasks</module>
         <module>queen</module>
+        <module>code-kata</module>
     </modules>
 
 
