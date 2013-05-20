@@ -22,6 +22,7 @@
         <module>small-tasks</module>
         <module>queen</module>
         <module>code-kata</module>
+        <module>create-marshal</module>
     </modules>
 
 
