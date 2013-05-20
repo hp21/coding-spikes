@@ -23,6 +23,7 @@
         <module>queen</module>
         <module>code-kata</module>
         <module>create-marshal</module>
+        <module>game-of-life</module>
     </modules>
 
 
