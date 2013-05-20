@@ -43,7 +43,7 @@
                     </schemaIncludes>-->
 
                     <episodeFile>src/main/resources/META-INF/sun-jaxb.episode</episodeFile>
-                    <forceRegenerate>true</forceRegenerate>
+                    <forceRegenerate>false</forceRegenerate>
                 </configuration>
                 <executions>
                     <execution>
