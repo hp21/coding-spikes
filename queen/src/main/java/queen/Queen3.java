@@ -3,7 +3,7 @@ package queen;
 /**
  *
  */
-public class Queen1 {
+public class Queen3 {
 
     private static final int DEFAULT_SIZE = 8;
 
@@ -12,7 +12,9 @@ public class Queen1 {
 
     private int level;
 
-    public Queen1() {
+    private int numberOfSolutions;
+
+    public Queen3() {
 
         // row,col
         this.chess = new int[size][size];
@@ -20,7 +22,7 @@ public class Queen1 {
     }
 
     public static void main(String[] args) {
-        final Queen1 queen = new Queen1();
+        final Queen3 queen = new Queen3();
         queen.run();
     }
 
@@ -28,51 +30,23 @@ public class Queen1 {
         solve(level);
     }
 
-    public boolean solve(int column) {
-
-        boolean status = false;
+    public void solve(int level) {
 
         for (int rowIndex = 0; rowIndex < size; rowIndex++) {
-            if (available(rowIndex, column)) {
-                chess[rowIndex][column] = 1;
+            if (available(rowIndex, level)) {
+                chess[rowIndex][level] = 1;
 
-                if (isMoreColumnToPlace(column)) {
-
-                    status = solve(column + 1);
-                    if (!status) {
-                        chess[rowIndex][column] = 0;
-                        continue;
-                    }
-
-                    if(status && column==0){
-                        printChess();
-                        initChess();
-                        continue;
-                    }
+                if (isMoreColumnToPlace(level)) {
+                    solve(level + 1);
+                } else {
+                    numberOfSolutions++;
+                    printChess();
                 }
 
-                if (isLastColumn(column)) {
-//                    printChess();
-//                    initChess();
-                    status = true;
-                    break;
-                }
-
-                if (lowLevelSolutionFound(column, status)) {
-                    break; // find next solution
-                }
+                chess[rowIndex][level] = 0;
             }
         }
 
-        return status;
-    }
-
-    private boolean lowLevelSolutionFound(int level, boolean status) {
-        return status && level != 0;
-    }
-
-    private boolean isLastColumn(int level) {
-        return level == size - 1;
     }
 
     private boolean isMoreColumnToPlace(int level) {
@@ -125,7 +99,7 @@ public class Queen1 {
             System.out.println("");
         }
 
-        System.out.println("\n=======================\n");
+        System.out.println("\n========= Solution was: " + numberOfSolutions + "==============\n");
     }
 
     private void initChess() {
