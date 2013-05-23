@@ -24,6 +24,7 @@
         <module>code-kata</module>
         <module>create-marshal</module>
         <module>game-of-life</module>
+        <module>recursion</module>
     </modules>
 
 
