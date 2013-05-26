@@ -13,7 +13,9 @@ public class FindMin {
             return a[0];
         }
 
-        int min = Math.min(a[n - 1], findmin(a, n - 1));
+        // int min = Math.min(a[n - 1], findmin(a, n - 1));
+        int arrayMin = findmin(a, n - 1);
+        int min = a[n - 1] < arrayMin ? a[n - 1] : arrayMin;
 
         return min;
 
