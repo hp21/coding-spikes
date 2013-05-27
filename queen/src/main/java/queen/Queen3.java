@@ -30,20 +30,20 @@ public class Queen3 {
         solve(level);
     }
 
-    public void solve(int level) {
+    public void solve(int columnIndex) {
 
         for (int rowIndex = 0; rowIndex < size; rowIndex++) {
-            if (available(rowIndex, level)) {
-                chess[rowIndex][level] = 1;
+            if (available(rowIndex, columnIndex)) {
+                chess[rowIndex][columnIndex] = 1;
 
-                if (isMoreColumnToPlace(level)) {
-                    solve(level + 1);
+                if (isMoreColumnToPlace(columnIndex)) {
+                    solve(columnIndex + 1);
                 } else {
                     numberOfSolutions++;
                     printChess();
                 }
 
-                chess[rowIndex][level] = 0;
+                chess[rowIndex][columnIndex] = 0;
             }
         }
 

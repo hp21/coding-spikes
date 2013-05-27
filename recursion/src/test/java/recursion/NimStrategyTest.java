@@ -50,8 +50,9 @@ public class NimStrategyTest {
     // @Ignore
     public void testloop() {
 
-        for (int i = 2; i <= 21; i++) {
+        for (int i = 3; i <= 46; i++) {
 
+            nim.setMaxMove(5);
             int actual = nim.findGoodMove(i);
             // assertThat("Iteration: " + i, actual > 0, equalTo(true));
             System.out.println("Iteration: " + i + " is " + (actual > 0 ? " OK" : "BAD") + " actual:" + actual);
