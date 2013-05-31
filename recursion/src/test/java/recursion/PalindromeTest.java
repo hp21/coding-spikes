@@ -55,4 +55,49 @@ public class PalindromeTest {
         assertThat(actual, equalTo(false));
     }
 
+    // =========================
+
+    @Test
+    public void testEmpty1() {
+        final boolean actual = isPalindrome1("");
+        assertThat(actual, equalTo(true));
+    }
+
+    @Test
+    public void testOne1() {
+        final boolean actual = isPalindrome1("A");
+        assertThat(actual, equalTo(true));
+    }
+
+    @Test
+    public void test2Good1() {
+        final boolean actual = isPalindrome1("QQ");
+        assertThat(actual, equalTo(true));
+    }
+
+    @Test
+    public void test2Bad1() {
+        final boolean actual = isPalindrome1("QA");
+        assertThat(actual, equalTo(false));
+    }
+
+    @Test
+    public void test3Good1() {
+        boolean actual = isPalindrome1("ZZZ");
+        assertThat(actual, equalTo(true));
+
+        actual = isPalindrome1("ZAZ");
+        assertThat(actual, equalTo(true));
+    }
+
+    @Test
+    public void test3Bad1() {
+        final boolean actual = isPalindrome1("AQQ");
+        assertThat(actual, equalTo(false));
+    }
+
+    private boolean isPalindrome1(String str) {
+        return service.isPalindrome1(str, 0, str.length() - 1);
+    }
+
 }
