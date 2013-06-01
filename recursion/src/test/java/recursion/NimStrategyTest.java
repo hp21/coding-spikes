@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -47,7 +48,7 @@ public class NimStrategyTest {
     }
 
     @Test
-    // @Ignore
+    @Ignore
     public void testloop() {
 
         for (int i = 3; i <= 46; i++) {

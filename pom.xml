@@ -5,6 +5,7 @@
     <groupId>codechef</groupId>
     <artifactId>codechefful</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <packaging>pom</packaging>
 
     <name>Codechef Main</name>
@@ -25,6 +26,7 @@
         <module>create-marshal</module>
         <module>game-of-life</module>
         <module>recursion</module>
+        <module>eval-postfix</module>
     </modules>
 
 
