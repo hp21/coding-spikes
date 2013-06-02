@@ -93,6 +93,21 @@ public class BuildTreePostFixTest {
 
         actual = postfix.evaluate("21 11 2 - -");
         assertThat(actual, equalTo(12L));
+
+        actual = postfix.evaluate("6 9 + 2  *");
+        assertThat(actual, equalTo(30L));
+
+        actual = postfix.evaluate("6 9  2 * + 3 -");
+        assertThat(actual, equalTo(21L));
+
+
+
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testBad1() {
+        final long actual = postfix.evaluate(" 6 +");
+
     }
 
 }
