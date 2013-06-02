@@ -69,4 +69,30 @@ public class BuildTreePostFixTest {
         assertThat(postfix.evaluate(actual), equalTo(-9L));
     }
 
+    // direct tests
+
+    @Test
+    public void testOperations() {
+        long actual = postfix.evaluate("21");
+        assertThat(actual, equalTo(21L));
+
+        actual = postfix.evaluate("21 11 +");
+        assertThat(actual, equalTo(32L));
+
+        actual = postfix.evaluate("4 3 *");
+        assertThat(actual, equalTo(12L));
+
+        actual = postfix.evaluate("21 11 -");
+        assertThat(actual, equalTo(10L));
+
+        actual = postfix.evaluate("21 11 5 + +");
+        assertThat(actual, equalTo(37L));
+
+        actual = postfix.evaluate("4 3 2 * *");
+        assertThat(actual, equalTo(24L));
+
+        actual = postfix.evaluate("21 11 2 - -");
+        assertThat(actual, equalTo(12L));
+    }
+
 }

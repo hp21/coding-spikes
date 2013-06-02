@@ -68,6 +68,10 @@ public class BuildTreePostFix {
 
     }
 
+    public long evaluate(String expression) {
+        return evaluate(buildTree(expression));
+    }
+
     private long compule(String operator, long leftValue, long rightValue) {
         long value = 0;
 
