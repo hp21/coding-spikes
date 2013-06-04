@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 
+import tree.Node;
+
 /**
  * Date: 2013.06.04. Time: 19:26
  */
-public class ExpressionParser {
+public class ExpressionParserTreeBuilder {
 
     private static String EOF = "EOF";
     private final String expression;
@@ -17,44 +19,51 @@ public class ExpressionParser {
 
     private String currentToken;
 
-    public ExpressionParser(String expression) {
+    public ExpressionParserTreeBuilder(String expression) {
         pattern = Pattern.compile("[+-]?\\d+");
         this.expression = expression;
         tokenList = initTokens(expression);
     }
 
-    public long parse() {
+    public Node<String> parse() {
         nextToken();
-        long value = term();
+        Node<String> value = term();
 
         while (isPlusOperator(currentToken) || isMisunOperator(currentToken)) {
             String operation = currentToken;
             nextToken();
-            final long myValue = term();
-            value = compute(value, myValue, operation);
+            final Node<String> myValue = term();
+            Node<String> operationNode = new Node<String>(operation);
+            operationNode.setLeft(value);
+            operationNode.setRight(myValue);
+            value = operationNode;
+
         }
 
         return value;
     }
 
-    private long term() {
-        long value = factor();
+    private Node<String> term() {
+        Node<String> value = factor();
 
         while (isMultiplyOperator(currentToken) || isDivideOperator(currentToken)) {
             String operation = currentToken;
             nextToken();
-            final long myValue = factor();
-            value = compute(value, myValue, operation);
+            final Node<String> myValue = factor();
+            Node<String> operationNode = new Node<String>(currentToken);
+            operationNode.setLeft(value);
+            operationNode.setRight(value);
+            value = operationNode;
         }
 
         return value;
     }
 
-    private long factor() {
-        long value;
+    private Node<String> factor() {
+        Node<String> value;
 
         if (isNumber(currentToken)) {
-            value = Long.valueOf(currentToken);
+            value = new Node<String>(currentToken);
             nextToken();
         } else {
             throw new RuntimeException("factor: Number expteced, got: " + currentToken);
