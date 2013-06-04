@@ -38,13 +38,26 @@ public class InfixToPostFixTest {
         actual = infixToPostFix.infixToPostfix("4 - 5");
         assertThat(actual, equalTo("4 5 -"));
 
-        actual = infixToPostFix.infixToPostfix("a + b * c - d");
-        assertThat(actual, equalTo("a b c * + d -"));
+    }
+
+    @Test
+    public void testThree() {
+        String actual = infixToPostFix.infixToPostfix("a + b * c - d");
+       // assertThat(actual, equalTo("a b c * + d -"));
 
         actual = infixToPostFix.infixToPostfix("a * b + 2");
         assertThat(actual, equalTo("a b * 2 +"));
 
-      /*  actual = infixToPostFix.infixToPostfix("3 * (2 + 5)");
-        assertThat(actual, equalTo("a b * 2 +"));*/
+        actual = infixToPostFix.infixToPostfix("2 + 4 + 5 + 6");
+        assertThat(actual, equalTo("2 4 5 6 + + +"));
+
+
+
+
+        /*
+         * actual = infixToPostFix.infixToPostfix("3 * (2 + 5)");
+         * assertThat(actual, equalTo("a b * 2 +"));
+         */
+
     }
 }

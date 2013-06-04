@@ -59,6 +59,14 @@ public class PostFixTest {
 
     }
 
+    @Test
+    public void test4() {
+
+        long actual = postfix.eval("2 4 5 6 + + +");
+        assertThat(actual, equalTo(17L));
+
+    }
+
     public void testIsNumberMethod() throws Exception {
         Method method = getMethod("isNumber");
 

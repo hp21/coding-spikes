@@ -27,10 +27,10 @@ public class BuildTreePostFix {
 
             if (isOperator(token)) {
                 Node<String> operatorNode = new Node<String>(token);
-                final Node<String> value2 = stack.pop();
-                final Node<String> value1 = stack.pop();
-                operatorNode.setLeft(value1);
-                operatorNode.setRight(value2);
+                final Node<String> valueRight = stack.pop();
+                final Node<String> valueLeft = stack.pop();
+                operatorNode.setLeft(valueLeft);
+                operatorNode.setRight(valueRight);
                 stack.push(operatorNode);
             } else if (isNumber(token)) {
                 stack.push(new Node<String>(token));
@@ -68,8 +68,8 @@ public class BuildTreePostFix {
 
     }
 
-    public long evaluate(String expression) {
-        return evaluate(buildTree(expression));
+    public long evaluate(String postFixExpression) {
+        return evaluate(buildTree(postFixExpression));
     }
 
     private long compule(String operator, long leftValue, long rightValue) {

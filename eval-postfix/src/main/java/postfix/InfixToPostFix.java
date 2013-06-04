@@ -51,11 +51,11 @@ public class InfixToPostFix {
             if (isPlusOperator(token) || isMisunOperator(token)) {
                 result = true;
             }
-        } else if (isPlusOperator(peek) || isMisunOperator(peek)) {
+        }/* else if (isPlusOperator(peek) || isMisunOperator(peek)) {
             if (isPlusOperator(token) || isMisunOperator(token)) {
                 result = true;
             }
-        }
+        }*/
 
         return result;
     }
