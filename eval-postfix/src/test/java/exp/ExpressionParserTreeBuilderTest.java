@@ -7,6 +7,8 @@ import org.junit.Test;
 
 import tree.Node;
 
+import com.google.common.base.Strings;
+
 /**
  * Date: 2013.06.04. Time: 21:10
  */
@@ -60,13 +62,28 @@ public class ExpressionParserTreeBuilderTest {
 
         assertThat(right.getData(), equalTo("8"));
 
-       /* parser = new ExpressionParserTreeBuilder("6 - 9");
+        printTree(actual, 0);
 
-        actual = parser.parse();
-        assertThat(actual.getData(), equalTo("-"));
-
-        assertThat(actual.getLeft().getData(), equalTo("6"));
-        assertThat(actual.getRight().getData(), equalTo("9"));*/
+        /*
+         * parser = new ExpressionParserTreeBuilder("6 - 9");
+         * 
+         * actual = parser.parse(); assertThat(actual.getData(), equalTo("-"));
+         * 
+         * assertThat(actual.getLeft().getData(), equalTo("6"));
+         * assertThat(actual.getRight().getData(), equalTo("9"));
+         */
 
     }
+
+    private void printTree(Node<?> node, int level) {
+
+        if (node == null) {
+            return;
+        }
+
+        System.out.print(Strings.repeat(" ", 40- level));
+        System.out.print("" + node.getData() + ((node.getData().equals("+")) ? "\n" : ""));
+        printTree(node.getLeft(), (level + 1));
+        printTree(node.getRight(), (level + 1));
+ }
 }
