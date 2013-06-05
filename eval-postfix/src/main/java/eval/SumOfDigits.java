@@ -23,6 +23,10 @@ public class SumOfDigits {
      *             if {@code number} is smaller than zero
      */
     public int sumOfSum(long number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("Number must be >0");
+        }
+
         long value = 0;
 
         final long result = number / 10L;

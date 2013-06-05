@@ -1,7 +1,8 @@
 package eval;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,58 +22,64 @@ public class SumOfDigitsTest {
     @Test
     public void zeroTest() {
         final int actual = sumOfDigits.sumOfSum(0);
-        Assert.assertThat(actual, CoreMatchers.equalTo(0));
+        assertThat(actual, equalTo(0));
     }
 
     @Test
-     public void oneTest() {
+    public void oneTest() {
         final int actual = sumOfDigits.sumOfSum(1);
-        Assert.assertThat(actual, CoreMatchers.equalTo(1));
+        assertThat(actual, equalTo(1));
     }
 
     @Test
     public void tenTest() {
         int actual = sumOfDigits.sumOfSum(10);
-        Assert.assertThat(actual, CoreMatchers.equalTo(1));
+        assertThat(actual, equalTo(1));
 
         actual = sumOfDigits.sumOfSum(11);
-        Assert.assertThat(actual, CoreMatchers.equalTo(2));
+        assertThat(actual, equalTo(2));
 
         actual = sumOfDigits.sumOfSum(17);
-        Assert.assertThat(actual, CoreMatchers.equalTo(8));
+        assertThat(actual, equalTo(8));
 
         actual = sumOfDigits.sumOfSum(97);
-        Assert.assertThat(actual, CoreMatchers.equalTo(16));
+        assertThat(actual, equalTo(16));
     }
 
     @Test
     public void hundredTest() {
         int actual = sumOfDigits.sumOfSum(100);
-        Assert.assertThat(actual, CoreMatchers.equalTo(1));
+        assertThat(actual, equalTo(1));
 
         actual = sumOfDigits.sumOfSum(110);
-        Assert.assertThat(actual, CoreMatchers.equalTo(2));
+        assertThat(actual, equalTo(2));
 
         actual = sumOfDigits.sumOfSum(170);
-        Assert.assertThat(actual, CoreMatchers.equalTo(8));
+        assertThat(actual, equalTo(8));
 
         actual = sumOfDigits.sumOfSum(970);
-        Assert.assertThat(actual, CoreMatchers.equalTo(16));
+        assertThat(actual, equalTo(16));
 
         actual = sumOfDigits.sumOfSum(547);
-        Assert.assertThat(actual, CoreMatchers.equalTo(16));
+        assertThat(actual, equalTo(16));
 
         actual = sumOfDigits.sumOfSum(999);
-        Assert.assertThat(actual, CoreMatchers.equalTo(27));
+        assertThat(actual, equalTo(27));
 
         actual = sumOfDigits.sumOfSum(102);
-        Assert.assertThat(actual, CoreMatchers.equalTo(3));
+        assertThat(actual, equalTo(3));
     }
 
     @Test
     public void miscTest() {
         int actual = sumOfDigits.sumOfSum(1010406);
-        Assert.assertThat(actual, CoreMatchers.equalTo(12));}
+        assertThat(actual, equalTo(12));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void negativeTest() {
+        int actual = sumOfDigits.sumOfSum(-1010406);
+        assertThat(actual, equalTo(12));
+    }
+
 }
-
-
