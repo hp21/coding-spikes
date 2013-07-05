@@ -15,10 +15,10 @@ public class DFARuleBook {
     }
 
     public String nextState(String state, char character) {
-        return ruleFor(state, character).follow();
+        return findRuleFor(state, character).follow();
     }
 
-    public FARule ruleFor(String state, char character) {
+    public FARule findRuleFor(String state, char character) {
         for (FARule rule : rules) {
             if (rule.appliesTo(state, character)) {
                 return rule;
