@@ -27,6 +27,11 @@ public class SumOfDigits {
             throw new IllegalArgumentException("Number must be >0");
         }
 
+        long value = sumOfSumInternal(number);
+        return (int) value;
+    }
+
+    private long sumOfSumInternal(long number) {
         long value = 0;
 
         final long result = number / 10L;
@@ -38,6 +43,6 @@ public class SumOfDigits {
             value = remainder + sumOfSum(result);
         }
 
-        return (int) value;
+        return value;
     }
 }
