@@ -1,4 +1,5 @@
-package fa;
+package famap;
+
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -9,9 +10,9 @@ public class DFA {
     final String startState;
     String currentState;
     final Set<String> acceptState;
-    final DFARuleBook ruleBook;
+    final DFARuleBookMap ruleBook;
 
-    public DFA(String currentState, Collection<String> acceptState, DFARuleBook ruleBook) {
+    public DFA(String currentState, Collection<String> acceptState, DFARuleBookMap ruleBook) {
         this.acceptState = new HashSet<String>(acceptState);
         this.startState = this.currentState = currentState;
         this.ruleBook = ruleBook;
