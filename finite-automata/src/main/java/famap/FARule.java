@@ -5,22 +5,25 @@ package famap;
  */
 public class FARule {
 
-    String state;
+    State state;
     char character;
-    String nextState;
+    State nextState;
 
-    public FARule(String state, char character, String nextState) {
+    public FARule(State state, char character, State nextState) {
         this.character = character;
         this.nextState = nextState;
         this.state = state;
     }
 
+    public FARule(String state, char character, String nextState) {
+        this(new State(state), character, new State(nextState));
+    }
 
-    public boolean appliesTo(String state, char character) {
+    public boolean appliesTo(State state, char character) {
         return this.state == state && this.character == character;
     }
 
-    public String follow() {
+    public State follow() {
         return nextState;
     }
 
@@ -28,11 +31,11 @@ public class FARule {
         return character;
     }
 
-    public String getNextState() {
+    public State getNextState() {
         return nextState;
     }
 
-    public String getState() {
+    public State getState() {
         return state;
     }
 

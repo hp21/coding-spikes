@@ -7,13 +7,13 @@ import java.util.Set;
 
 public class DFA {
 
-    final String startState;
-    String currentState;
-    final Set<String> acceptState;
+    final State startState;
+    State currentState;
+    final Set<State> acceptState;
     final DFARuleBookMap ruleBook;
 
-    public DFA(String currentState, Collection<String> acceptState, DFARuleBookMap ruleBook) {
-        this.acceptState = new HashSet<String>(acceptState);
+    public DFA(State currentState, Collection<State> acceptState, DFARuleBookMap ruleBook) {
+        this.acceptState = new HashSet<State>(acceptState);
         this.startState = this.currentState = currentState;
         this.ruleBook = ruleBook;
     }
