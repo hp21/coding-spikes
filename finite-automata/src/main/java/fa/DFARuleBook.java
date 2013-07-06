@@ -3,8 +3,7 @@ package fa;
 import java.util.List;
 
 /**
- * Created User: Peter Horvath/
- * Date: 2013.07.05. Time: 19:38
+ * Created User: Peter Horvath/ Date: 2013.07.05. Time: 19:38
  */
 public class DFARuleBook {
 

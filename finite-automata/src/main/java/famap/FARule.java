@@ -5,9 +5,11 @@ package famap;
  */
 public class FARule {
 
-    State state;
-    char character;
-    State nextState;
+    final private State state;
+    final private char character;
+    final private State nextState;
+
+    private IStateFactory factory = new StateFactory();
 
     public FARule(State state, char character, State nextState) {
         this.character = character;
@@ -16,7 +18,11 @@ public class FARule {
     }
 
     public FARule(String state, char character, String nextState) {
-        this(new State(state), character, new State(nextState));
+        factory = new StateFactory();
+
+        this.state = factory.produce(state);
+        this.character = character;
+        this.nextState = factory.produce(nextState);
     }
 
     public boolean appliesTo(State state, char character) {

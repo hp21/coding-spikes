@@ -15,7 +15,6 @@ public class FARule {
         this.state = state;
     }
 
-
     public boolean appliesTo(String state, char character) {
         return this.state == state && this.character == character;
     }
