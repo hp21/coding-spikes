@@ -34,52 +34,39 @@ public class NFARuleBookTest {
         NFARuleBook ruleBook = new NFARuleBook(Arrays.asList(new FARule("1", 'a', "1"), new FARule("1", 'b', "1"), new FARule("1", 'b', "2"),
                 new FARule("2", 'a', "3"), new FARule("2", 'b', "3"), new FARule("3", 'a', "4"), new FARule("3", 'b', "4")));
 
-        Set<String> currentSet = new HashSet<String>();
-        currentSet.add("1");
-        Set<String> actual = ruleBook.nextStates(currentSet, 'b');
+        Set<String> actual = ruleBook.nextStates(SetCreator.create("1"), 'b');
         assertThat(actual.contains("1"), equalTo(true));
         assertThat(actual.contains("2"), equalTo(true));
 
-
-        currentSet = new HashSet<String>();
-        currentSet.add("1");
-        currentSet.add("2");
-
-        actual = ruleBook.nextStates(currentSet, 'a');
+        actual = ruleBook.nextStates(SetCreator.create("1", "2"), 'a');
         assertThat(actual.contains("1"), equalTo(true));
         assertThat(actual.contains("3"), equalTo(true));
 
-        currentSet = new HashSet<String>();
-        currentSet.add("1");
-        currentSet.add("3");
-        actual = ruleBook.nextStates(currentSet, 'b');
+        actual = ruleBook.nextStates(SetCreator.create("1", "3"), 'b');
         assertThat(actual.contains("1"), equalTo(true));
         assertThat(actual.contains("2"), equalTo(true));
         assertThat(actual.contains("4"), equalTo(true));
-
     }
 
     @Test
     public void test2() throws Exception {
 
-        Set<String> startStates = new HashSet<String>();
-        startStates.add("1");
-
-        Set<String> acceptStates = new HashSet<String>();
-        acceptStates.add("4");
-
-
-        NFA nfa = new NFA(startStates, acceptStates, ruleBook);
+        NFA nfa = new NFA(SetCreator.create("1"), SetCreator.create("4"), ruleBook);
         nfa.readString("bbbbb");
 
-        final boolean actual = nfa.accepting();
+        boolean actual = nfa.accepting();
         assertThat(actual, equalTo(true));
 
+        nfa = new NFA(SetCreator.create("1", "2", "4"), SetCreator.create("4"), ruleBook);
+        nfa.readString("bbbbb");
 
-      /*  dfa = new DFA("1", Arrays.asList("3"), ruleBook);
-        dfa.readString("baaab");
-        final boolean actual1 = dfa.accepting();
-        assertThat(actual1, equalTo(true));*/
+        actual = nfa.accepting();
+        assertThat(actual, equalTo(true));
 
+        nfa = new NFA(SetCreator.create("1", "2", "4"), SetCreator.create("4"), ruleBook);
+        nfa.readString("bbabb");
+
+        actual = nfa.accepting();
+        assertThat(actual, equalTo(false));
     }
 }
