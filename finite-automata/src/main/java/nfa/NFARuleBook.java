@@ -14,42 +14,42 @@ public class NFARuleBook {
     /**
      * NFA Machines rules
      */
-    final List<FARule> rules;
+    private final List<FARule> rules;
 
     public NFARuleBook(final List<FARule> rules) {
         this.rules = rules;
     }
 
     public Set<String> nextStates(Set<String> states, char character) {
-        final HashSet<String> values = new HashSet<String>();
+        final HashSet<String> nextStates = new HashSet<String>();
 
         for (String state : states) {
-            values.addAll(followRulesFor(state, character));
+            nextStates.addAll(followRulesFor(state, character));
         }
 
-        return values;
+        return nextStates;
     }
 
-    public Set<String> followRulesFor(String state, char character) {
-        final HashSet<String> followSet = new HashSet<String>();
+    private Set<String> followRulesFor(String state, char character) {
+        final HashSet<String> followStates = new HashSet<String>();
 
         for (FARule rule : findRuleFor(state, character)) {
-            followSet.add(rule.follow());
+            followStates.add(rule.follow());
         }
 
-        return followSet;
+        return followStates;
     }
 
-    public Set<FARule> findRuleFor(String state, char character) {
-        final HashSet<FARule> value = new HashSet<FARule>();
+    private Set<FARule> findRuleFor(String state, char character) {
+        final HashSet<FARule> matchingRules = new HashSet<FARule>();
 
         for (FARule rule : rules) {
             if (rule.appliesTo(state, character)) {
-                value.add(rule);
+                matchingRules.add(rule);
             }
         }
 
-        return value;
+        return matchingRules;
     }
 
 }

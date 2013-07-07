@@ -25,6 +25,6 @@ public class FARule {
 
     @Override
     public String toString() {
-        return "FARule{" + "character='" + character + '\'' + ", state='" + state + '\'' + ", nextState='" + nextState + '\'' + '}';
+        return "FARule{" + "state=" + state + '\'' + ", character=" + character + ",  nextState='" + nextState + '\'' + '}';
     }
 }
