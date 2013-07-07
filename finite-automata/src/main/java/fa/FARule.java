@@ -5,6 +5,8 @@ package fa;
  */
 public class FARule {
 
+    public final static char NIL = '\u0000';
+
     String state;
     char character;
     String nextState;

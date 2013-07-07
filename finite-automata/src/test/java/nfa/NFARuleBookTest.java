@@ -69,4 +69,51 @@ public class NFARuleBookTest {
         actual = nfa.accepting();
         assertThat(actual, equalTo(false));
     }
+
+    @Test
+    public void test3() throws Exception {
+        NFARuleBook nfaRuleBook = new NFARuleBook(Arrays.asList(new FARule("1", FARule.NIL, "2"), new FARule("1", FARule.NIL, "4"), new FARule("2",
+                'a', "3"), new FARule("3", 'a', "2"), new FARule("4", 'a', "5"), new FARule("5", 'a', "6"), new FARule("6", 'a', "4")));
+
+
+        final Set<String> actual = nfaRuleBook.nextStates(SetCreator.create("1"), FARule.NIL);
+        assertThat(actual.contains("2"), equalTo(true));
+        assertThat(actual.contains("4"), equalTo(true));
+
+
+        nfaRuleBook = new NFARuleBook(Arrays.asList(new FARule("1", FARule.NIL, "2"), new FARule("1", FARule.NIL, "4"), new FARule("2", 'a', "3"),
+                new FARule("3", 'a', "2"), new FARule("4", 'a', "5"), new FARule("5", 'a', "6"), new FARule("6", 'a', "4")));
+
+        final Set<String> actualFree = nfaRuleBook.followFreeMoves(SetCreator.create("1"));
+        assertThat(actualFree.contains("1"), equalTo(true));
+        assertThat(actualFree.contains("2"), equalTo(true));
+        assertThat(actualFree.contains("4"), equalTo(true));
+        assertThat(actualFree.contains("3"), equalTo(false));
+
+
+    }
+
+    @Test
+    public void test4() throws Exception {
+        NFARuleBook nfaRuleBook = new NFARuleBook(Arrays.asList(new FARule("1", FARule.NIL, "2"), new FARule("1", FARule.NIL, "4"), new FARule("2",
+                'a', "3"), new FARule("3", 'a', "2"), new FARule("4", 'a', "5"), new FARule("5", 'a', "6"), new FARule("6", 'a', "4")));
+
+        NFA nfa = new NFA(SetCreator.create("1"), SetCreator.create("2", "4"), nfaRuleBook);
+        nfa.readString("aa");
+        boolean actual = nfa.accepting();
+        assertThat(actual, equalTo(true));
+
+        nfa = new NFA(SetCreator.create("1"), SetCreator.create("2", "4"), nfaRuleBook);
+//        nfa= nfa.toNFA();
+        nfa.readString("aaa");
+        actual = nfa.accepting();
+        assertThat(actual, equalTo(true));
+
+        nfa = new NFA(SetCreator.create("1"), SetCreator.create("2", "4"), nfaRuleBook);
+        nfa.readString("aaaaa");
+        actual = nfa.accepting();
+        assertThat(actual, equalTo(false));
+
+
+    }
 }

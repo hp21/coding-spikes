@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.google.common.collect.Sets;
 import fa.FARule;
 
 /**
@@ -30,6 +31,20 @@ public class NFARuleBook {
 
         return nextStates;
     }
+
+    public Set<String> followFreeMoves(Set<String> states) {
+
+        final Set<String> moreStates = nextStates(states, FARule.NIL);
+
+        if (Sets.difference(moreStates, states).isEmpty()) {
+            return states;
+        }
+        else {
+            states.addAll(moreStates);
+            return followFreeMoves(states);
+        }
+    }
+
 
     private Set<String> followRulesFor(String state, char character) {
         final HashSet<String> followStates = new HashSet<String>();
