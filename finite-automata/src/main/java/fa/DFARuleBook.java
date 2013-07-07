@@ -1,5 +1,6 @@
 package fa;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -7,9 +8,9 @@ import java.util.List;
  */
 public class DFARuleBook {
 
-    final List<FARule> rules;
+    final Collection<FARule> rules;
 
-    public DFARuleBook(final List<FARule> rules) {
+    public DFARuleBook(final Collection<FARule> rules) {
         this.rules = rules;
     }
 

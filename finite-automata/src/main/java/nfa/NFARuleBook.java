@@ -1,5 +1,6 @@
 package nfa;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,9 +15,9 @@ public class NFARuleBook {
     /**
      * NFA Machines rules
      */
-    private final List<FARule> rules;
+    private final Collection<FARule> rules;
 
-    public NFARuleBook(final List<FARule> rules) {
+    public NFARuleBook(final Collection<FARule> rules) {
         this.rules = rules;
     }
 
