@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class DFARuleBook {
 
-    final Collection<FARule> rules;
+    private final Collection<FARule> rules;
 
     public DFARuleBook(final Collection<FARule> rules) {
         this.rules = rules;

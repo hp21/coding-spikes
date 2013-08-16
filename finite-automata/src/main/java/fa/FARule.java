@@ -7,9 +7,9 @@ public class FARule {
 
     public final static char NIL = '\u0000';
 
-    String state;
-    char character;
-    String nextState;
+    private String state;
+    private char character;
+    private String nextState;
 
     public FARule(String state, char character, String nextState) {
         this.character = character;

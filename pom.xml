@@ -28,6 +28,7 @@
         <module>recursion</module>
         <module>eval-postfix</module>
         <module>finite-automata</module>
+        <module>sorts</module>
     </modules>
 
 

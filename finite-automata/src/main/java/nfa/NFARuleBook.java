@@ -38,8 +38,7 @@ public class NFARuleBook {
 
         if (Sets.difference(moreStates, states).isEmpty()) {
             return states;
-        }
-        else {
+        } else {
             states.addAll(moreStates);
             return followFreeMoves(states);
         }

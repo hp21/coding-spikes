@@ -6,14 +6,15 @@ import java.util.Set;
 
 public class DFA {
 
-    final String startState;
-    String currentState;
-    final Set<String> acceptState;
-    final DFARuleBook ruleBook;
+    private final String startState;
+    private String currentState;
+    private final Set<String> acceptState;
+    private final DFARuleBook ruleBook;
 
     public DFA(String currentState, Collection<String> acceptState, DFARuleBook ruleBook) {
         this.acceptState = new HashSet<String>(acceptState);
-        this.startState = this.currentState = currentState;
+        this.startState = currentState;
+        this.currentState = currentState;
         this.ruleBook = ruleBook;
     }
 
