@@ -17,15 +17,28 @@ public class Bubble implements ISort {
 
             int value = array[z];
 
-            for (int before = z - 1; before >= 0; before--) {
+           /*
+            int before = z - 1;
+
+            while (before >= 0 && value < array[before]) {
+                array[before + 1] = array[before];
+                before--;
+            }
+
+            array[before + 1] = value;
+*/
+            int before = z - 1;
+
+            for (before = z - 1; before >= 0; before--) {
                 if (value < array[before]) {
                     //move up
                     array[before + 1] = array[before];
-                    array[before] = value;
                 } else {
                     break;
                 }
             }
+
+            array[before + 1] = value;
 
         }
 
