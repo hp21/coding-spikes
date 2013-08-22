@@ -27,7 +27,7 @@ public class Bubble implements ISort {
 
             array[before + 1] = value;
 */
-            int before = z - 1;
+            int before;
 
             for (before = z - 1; before >= 0; before--) {
                 if (value < array[before]) {
