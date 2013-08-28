@@ -10,9 +10,9 @@
     </content>
     <orderEntry type="jdk" jdkName="JDK-1.6.0-23-64-bit" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.9" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:13.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="junit-4.9" level="project" />
+    <orderEntry type="library" exported="" name="guava-13.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="hamcrest-core-1.1" level="project" />
   </component>
 </module>
 
