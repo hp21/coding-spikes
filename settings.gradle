@@ -1,5 +1,6 @@
 rootProject.name = 'codechefful'
-include ':daily-train', ':reserve-list', ':cyclic-list', ':small-tasks', ':queen', ':code-kata', ':create-marshal', ':game-of-life', ':recursion', ':eval-postfix', ':finite-automata', ':sorts:buble-sort'
+include ':daily-train', ':reserve-list', ':cyclic-list', ':small-tasks', ':queen', ':code-kata', ':create-marshal', ':game-of-life', ':recursion', ':eval-postfix', ':finite-automata', ':sorts-buble-sort'
+include ':sorts-api'
 
 project(':daily-train').projectDir = "$rootDir/daily-train" as File
 project(':reserve-list').projectDir = "$rootDir/reserve-list" as File
@@ -12,5 +13,6 @@ project(':game-of-life').projectDir = "$rootDir/game-of-life" as File
 project(':recursion').projectDir = "$rootDir/recursion" as File
 project(':eval-postfix').projectDir = "$rootDir/eval-postfix" as File
 project(':finite-automata').projectDir = "$rootDir/finite-automata" as File
-project(':sorts:buble-sort').projectDir = "$rootDir/sorts/buble-sort" as File
+project(':sorts-buble-sort').projectDir = "$rootDir/sorts/buble-sort" as File
+project(':sorts-api').projectDir = "$rootDir/sorts/api" as File
 //project(':sorts').projectDir = "$rootDir/sorts" as File
