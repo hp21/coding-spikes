@@ -14,8 +14,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="junit-4.9" level="project" />
     <orderEntry type="library" exported="" name="guava-13.0.1" level="project" />
-    <orderEntry type="library" exported="" name="jaxb-api-2.2.5" level="project" />
     <orderEntry type="library" scope="TEST" name="hamcrest-core-1.1" level="project" />
+    <orderEntry type="library" exported="" name="jaxb-api-2.2.5" level="project" />
   </component>
 </module>
 
