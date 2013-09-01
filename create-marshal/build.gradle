@@ -1,0 +1,8 @@
+description = 'create-marshal'
+
+
+sourceSets.main.java.srcDirs = sourceSets.main.java.srcDirs + "src/main/generated"
+
+dependencies {
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.5'
+}
