@@ -11,7 +11,7 @@ public class StringCounter {
     public StringCounter() {
     }
 
-    public String count(String inputString) {
+    public String count1(String inputString) {
 
         String str = inputString == null ? "" : inputString;
 
@@ -41,6 +41,31 @@ public class StringCounter {
         // dump remaining
         if (!firstCharacter(prevString)) {
             ret = addToReturn(ret, prevString, prevCount);
+        }
+
+        return ret;
+    }
+
+    public String count(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        if (s.length() == 1) {
+            return s.charAt(0) + "1";
+        }
+        String ret = "";
+        for (int i = 0; i < s.length() - 1; i++) {
+            ret =ret + String.valueOf(s.charAt(i));
+            int count = 1;
+            while (i < s.length() - 1 && s.charAt(i) == s.charAt(i + 1)) {
+                i++;
+                count++;
+            }
+            ret = ret + count;
+        }
+
+        if (s.charAt(s.length() - 2) != s.charAt(s.length() - 1)) {
+            ret = ret + s.charAt(s.length() - 1) + 1;
         }
 
         return ret;
