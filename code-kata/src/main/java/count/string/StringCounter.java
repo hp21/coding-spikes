@@ -2,13 +2,19 @@ package count.string;
 
 /**
  * Created with IntelliJ IDEA. User: hp21 Date: 2013.10.16. Time: 21:03
+ * 
+ * prevString == "" means no character has been read. While reading inptu string
+ * "" can not be assigned to it.
  */
 public class StringCounter {
 
     public StringCounter() {
     }
 
-    public String count(String str) {
+    public String count(String inputString) {
+
+        String str = inputString == null ? "" : inputString;
+
         String ret = "";
 
         String prevString = "";
@@ -45,12 +51,12 @@ public class StringCounter {
         return ret;
     }
 
-    private boolean firstCharacter(String prevStirng) {
-        return prevStirng.length() == 0;
+    private boolean firstCharacter(String prevString) {
+        return prevString.length() == 0;
     }
 
     private String dumpValue(String prevString, int prevCount) {
-        return prevString + "/" + prevCount;
+        return prevString + prevCount;
     }
 
 }
