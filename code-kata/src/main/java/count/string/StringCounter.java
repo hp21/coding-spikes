@@ -18,29 +18,29 @@ public class StringCounter {
         String ret = "";
 
         String prevString = "";
-        int prevCount = 0;
+        int count = 0;
 
         for (int i = 0; i < str.length(); i++) {
             String chr = str.substring(i, i + 1);
 
             if (prevString.equals(chr)) {
-                prevCount++;
+                count++;
                 continue;
             }
 
             if (firstCharacter(prevString)) {
                 prevString = chr;
-                prevCount++;
+                count++;
             } else {
-                ret = addToReturn(ret, prevString, prevCount);
+                ret = addToReturn(ret, prevString, count);
                 prevString = chr;
-                prevCount = 1;
+                count = 1;
             }
         }
 
-        // dump remaining
+        // dump remaining -- dont output 1st char
         if (!firstCharacter(prevString)) {
-            ret = addToReturn(ret, prevString, prevCount);
+            ret = addToReturn(ret, prevString, count);
         }
 
         return ret;
