@@ -34,6 +34,5 @@ public class StringCalculator {
         ret = ret + Integer.valueOf(numbers.substring(prevIndex + 1, numbers.length()));
 
         return ret;
-
     }
 }
