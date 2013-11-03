@@ -1,7 +1,8 @@
 package mintree;
 
 /**
- * User: hp21 Date: 2013.11.02. Time: 15:25
+ * Find the lowest odd number in an arbitrary tree User: hp21 Date: 2013.11.02.
+ * Time: 15:25
  */
 public class TreeAlg {
 
