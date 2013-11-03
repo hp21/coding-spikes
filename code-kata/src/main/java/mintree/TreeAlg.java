@@ -1,51 +1,39 @@
 package mintree;
 
 /**
- * User: hp21 Date: 2013.11.02. Time: 15:25 To change this template use File |
- * Settings | File Templates.
+ * User: hp21 Date: 2013.11.02. Time: 15:25
  */
 public class TreeAlg {
 
     public TreeAlg() {
     }
 
-    public int mintree(TreeNode node) {
+    public Integer mintree(TreeNode node) {
 
         if (node.isLeaf()) {
-            return node.getValue();
+            return oddValue(node);
         }
 
-        int min = node.getValue();
+        Integer min = oddValue(node);
 
         for (TreeNode myNode : node.getChildren()) {
-            final int nodeMin = mintree(myNode);
-            min = min > nodeMin ? nodeMin : min;
+            final Integer nodeMin = mintree(myNode);
+
+            if (nodeMin != null) {
+                min = min == null ? nodeMin : (min > nodeMin ? nodeMin : min);
+            }
         }
 
         return min;
     }
 
-    /**
-     * Use generic finction for comparision
-     * 
-     * @param node
-     * @param operation
-     * @return
-     */
-    public int doTree(TreeNode node, IOperation<Integer, Integer> operation) {
+    private Integer oddValue(TreeNode node) {
+        return isOdd(node.getValue()) ? node.getValue() : null;
+    }
 
-        if (node.isLeaf()) {
-            return node.getValue();
-        }
-
-        int min = node.getValue();
-
-        for (TreeNode myNode : node.getChildren()) {
-            final int nodeMin = doTree(myNode, operation);
-            min = operation.operation(min, nodeMin);
-        }
-
-        return min;
+    private boolean isOdd(int number) {
+        final int remainder = number % 2;
+        return remainder == 1 || remainder == -1;
     }
 
 }

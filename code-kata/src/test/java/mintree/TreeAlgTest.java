@@ -1,14 +1,14 @@
 package mintree;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created with IntelliJ IDEA. User: U292148 Date: 2013.11.02. Time: 15:35 To
- * change this template use File | Settings | File Templates.
+ * User: hp21 Date: 2013.11.02. Time: 15:35
  */
 public class TreeAlgTest {
 
@@ -25,12 +25,21 @@ public class TreeAlgTest {
     }
 
     @Test
-    public void testOne() {
+    public void testOneEven() {
 
         TreeNode node1 = new TreeNode(2, null);
-        final int actual = treeAlg.mintree(node1);
+        final Integer actual = treeAlg.mintree(node1);
 
-        assertThat(actual, equalTo(2));
+        assertThat(actual, nullValue());
+    }
+
+    @Test
+    public void testOneOdd() {
+
+        TreeNode node1 = new TreeNode(21, null);
+        final Integer actual = treeAlg.mintree(node1);
+
+        assertThat(actual, equalTo(21));
     }
 
     @Test
@@ -84,22 +93,7 @@ public class TreeAlgTest {
         node1.addNode(leaf2);
         final int actual = treeAlg.mintree(node1);
 
-        assertThat(actual, equalTo(2));
-    }
-
-    @Test
-    public void test4WithOperation() {
-
-        TreeNode leaf11 = new TreeNode(11, null);
-        TreeNode leaf1 = new TreeNode(5, null);
-        leaf1.addNode(leaf11);
-        TreeNode leaf2 = new TreeNode(3, null);
-        TreeNode node1 = new TreeNode(2, null);
-        node1.addNode(leaf1);
-        node1.addNode(leaf2);
-        final int actual = treeAlg.doTree(node1, new MaxOperation());
-
-        assertThat(actual, equalTo(11));
+        assertThat(actual, equalTo(3));
     }
 
 }
