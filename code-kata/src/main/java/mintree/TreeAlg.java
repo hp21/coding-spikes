@@ -12,10 +12,10 @@ public class TreeAlg {
     public Integer mintree(TreeNode node) {
 
         if (node.isLeaf()) {
-            return oddValue(node);
+            return nodeValue(node);
         }
 
-        Integer min = oddValue(node);
+        Integer min = nodeValue(node);
 
         for (TreeNode myNode : node.getChildren()) {
             final Integer nodeMin = mintree(myNode);
@@ -28,8 +28,13 @@ public class TreeAlg {
         return min;
     }
 
-    private Integer oddValue(TreeNode node) {
-        return isOdd(node.getValue()) ? node.getValue() : null;
+    private Integer nodeValue(TreeNode node) {
+        final Integer value = node.getValue();
+        return oddValue(value);
+    }
+
+    private Integer oddValue(Integer value) {
+        return isOdd(value) ? value : null;
     }
 
     private boolean isOdd(int number) {
