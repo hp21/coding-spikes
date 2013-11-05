@@ -28,14 +28,19 @@ public class StringCounter {
                 continue;
             }
 
-            if (firstCharacter(prevString)) {
-                prevString = chr;
-                count++;
-            } else {
+            /*
+             * if (firstCharacter(prevString)) { prevString = chr; count++; }
+             * else { ret = addToReturn(ret, prevString, count); prevString =
+             * chr; count = 1; }
+             */
+
+            prevString = chr;
+            count = 1;
+
+            if (!firstCharacter(prevString)) {
                 ret = addToReturn(ret, prevString, count);
-                prevString = chr;
-                count = 1;
             }
+
         }
 
         // dump remaining -- dont output 1st char
@@ -55,7 +60,7 @@ public class StringCounter {
         }
         String ret = "";
         for (int i = 0; i < s.length() - 1; i++) {
-            ret =ret + String.valueOf(s.charAt(i));
+            ret = ret + String.valueOf(s.charAt(i));
             int count = 1;
             while (i < s.length() - 1 && s.charAt(i) == s.charAt(i + 1)) {
                 i++;
