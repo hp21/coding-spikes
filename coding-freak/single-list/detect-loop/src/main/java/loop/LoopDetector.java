@@ -13,7 +13,7 @@ public class LoopDetector {
     }
 
     public boolean hasLoop(LoopNode node) {
-        if (node == null || node.next() == null) {
+        if (node == null) {
             return false;
         }
 
