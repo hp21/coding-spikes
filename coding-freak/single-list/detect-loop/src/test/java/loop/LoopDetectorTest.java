@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class LoopDetectorTest {
 
-    private LoopDetector detector;
+    private ILoopDetector detector;
     private LoopNode node1;
     private LoopNode node2;
     private LoopNode node3;
@@ -20,7 +20,8 @@ public class LoopDetectorTest {
 
     @Before
     public void setUp() {
-        this.detector = new LoopDetector();
+//        detector = new LoopDetector();
+        detector = new LoopDetector2();
 
         node1 = new LoopNode(1);
         node2 = new LoopNode(2);
