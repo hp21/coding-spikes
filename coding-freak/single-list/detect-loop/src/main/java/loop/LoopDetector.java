@@ -38,26 +38,9 @@ public class LoopDetector implements ILoopDetector {
         return false;
     }
 
-    public boolean hasLoop2(LoopNode node) {
-
-        LoopNode hare = node;
-        LoopNode turtle = node;
-
-        while (hare != null) {
-            turtle = turtle.next();
-            hare = hare.next();
-            if (hare == null) {
-                break;
-            }
-
-            hare = hare.next();
-
-            if (hare == turtle) {
-                return true;
-            }
-
-        }
-
-        return false;
+    @Override
+    public int looplength(LoopNode node) {
+        return -1; // TODO: Implement
     }
+
 }

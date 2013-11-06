@@ -20,7 +20,7 @@ public class LoopDetectorTest {
 
     @Before
     public void setUp() {
-//        detector = new LoopDetector();
+        // detector = new LoopDetector();
         detector = new LoopDetector2();
 
         node1 = new LoopNode(1);
@@ -89,5 +89,65 @@ public class LoopDetectorTest {
         final boolean actual = detector.hasLoop(node1);
 
         assertThat(actual, equalTo(true));
+    }
+
+    @Test
+    public void testLoopLrnWithNull() {
+        final int actual = detector.looplength(null);
+        assertThat(actual, equalTo(-1));
+
+    }
+
+    @Test
+    public void testLoopLrnWith1() {
+        final int actual = detector.looplength(node1);
+        assertThat(actual, equalTo(-1));
+
+    }
+
+    @Test
+    public void testLoopLrnWith2() {
+        node1.setNext(node2);
+
+        final int actual = detector.looplength(node1);
+        assertThat(actual, equalTo(-1));
+
+    }
+
+    @Test
+    public void testLoopLrnWith3() {
+        node1.setNext(node2);
+        node2.setNext(node3);
+
+        final int actual = detector.looplength(node1);
+        assertThat(actual, equalTo(-1));
+
+    }
+
+    @Test
+    public void test42WithLoopCount() {
+        // 1-2-1-2-1-2-1-2...
+
+        node1.setNext(node2);
+        node2.setNext(node1);
+
+        final int actual = detector.looplength(node1);
+
+        assertThat(actual, equalTo(2));
+    }
+
+    @Test
+    public void test4WithLoopCount() {
+        // 1-2-3-4-5 -3-4-5 -3-4-5..........
+
+        node1.setNext(node2);
+        node2.setNext(node3);
+        node3.setNext(node4);
+        node4.setNext(node5);
+        node5.setNext(node3);
+
+        final int actual = detector.looplength(node1);
+
+        assertThat(actual, equalTo(3));
     }
 }
