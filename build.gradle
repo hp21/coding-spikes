@@ -13,9 +13,9 @@ subprojects {
 
 
     repositories {
-        mavenLocal()
+        mavenRepo url: "http://aiapd-testenv.lic.fra.dlh.de/artifactory/libs-snapshot"
         mavenCentral()
-        //  mavenRepo url: "http://repo.maven.apache.org/maven2"
+        mavenLocal()
     }
 
 

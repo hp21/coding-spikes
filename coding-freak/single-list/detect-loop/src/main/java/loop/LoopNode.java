@@ -25,6 +25,10 @@ public class LoopNode {
         this.next = next;
     }
 
+    public int getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return "LoopNode{" + "value=" + value + '}';
