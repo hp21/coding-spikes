@@ -13,6 +13,7 @@ public class ReverseString {
 
         final char[] origChars = str.toCharArray();
 
+//        reverse1(origChars, 0, origChars.length - 1);
         reverse(origChars, 0, origChars.length - 1);
 
         return String.valueOf(origChars);
@@ -30,4 +31,14 @@ public class ReverseString {
         reverse(origChars, low + 1, high - 1);
     }
 
+    private void reverse1(char[] origChars, int lo, int hi) {
+
+        for (int low = lo, high = hi; lo < hi; low++, high--) {
+            char tmp = origChars[high];
+            origChars[low] = origChars[high];
+            origChars[high] = tmp;
+        }
+    }
+
 }
+
