@@ -1,0 +1,5 @@
+Apress: coding interviews
+
+t1
+Question 9 Please implement a function to replace each blank in a string with “%20”. For instance, it
+outputs “We%20are%20happy.” if the input is “We are happy.”.
