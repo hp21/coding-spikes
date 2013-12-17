@@ -19,6 +19,8 @@ public class MergeArrays {
             a1[last--] = a2[a2Last] > a1[a1Last] ? a2[a2Last--] : a1[a1Last--];
         }
 
+        // handle remaining. only 1 'for' will run at max.
+        // the other # must be zero
         for (; a1Last >= 0; a1Last--) {
             a1[last--] = a1[a1Last];
         }
