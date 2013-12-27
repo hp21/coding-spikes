@@ -15,7 +15,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: hamcrest-core-1.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: guava-13.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit-4.9" level="project" />
-    <orderEntry type="module" module-name="common" exported="" />
   </component>
 </module>
 

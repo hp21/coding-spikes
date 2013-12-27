@@ -42,6 +42,7 @@ public class ListElement {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("value", value).add("next", next == null ? "null" : "not null").toString();
+        return Objects.toStringHelper(this).add("value", value).add("next", next == null ? "null" : "not null (" + next().value() + ")")
+                .toString();
     }
 }

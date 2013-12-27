@@ -1,3 +1,5 @@
+import com.sun.org.apache.regexp.internal.recompile
+
 allprojects {
     //apply plugin: 'idea'
     //apply plugin: 'maven'
@@ -29,5 +31,12 @@ subprojects {
 project(':sorts-buble-sort') {
     dependencies {
         compile project(':sorts-api')
+    }
+}
+
+
+project('interview-book') {
+    dependencies {
+        compile project(':common')
     }
 }

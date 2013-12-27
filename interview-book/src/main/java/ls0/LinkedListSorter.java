@@ -19,23 +19,17 @@ public class LinkedListSorter {
 
         ListElement sortedSubList = sortList(head.next());
 
-        ListElement sorted;
-
-        if (head.value() <= sortedSubList.value()) {
-            sorted = head;
-        } else {
-            sorted = insertIntoPosition(head, sortedSubList);
-        }
-
-        return sorted;
+        final ListElement result = insertIntoPosition(head, sortedSubList);
+        return result;
     }
 
-    private ListElement insertIntoPosition(ListElement element, ListElement sortedSubList) {
+    private ListElement insertIntoPosition(final ListElement element, final ListElement sortedSubList) {
+        ListElement result = sortedSubList;
 
         ListElement prev = null;
         ListElement follow = null;
 
-        for (ListElement myElement = sortedSubList; myElement != null; myElement = myElement.next()) {
+        for (ListElement myElement = result; myElement != null; myElement = myElement.next()) {
             if (element.value() < myElement.value()) {
                 follow = myElement;
                 break;
@@ -45,12 +39,14 @@ public class LinkedListSorter {
         }
 
         if (prev != null) {
+            // not 1st element in list
             prev.setNext(element);
         } else {
-            sortedSubList.setNext(element); // beginning of list
+            // 1st element in list
+            result = element;
         }
 
         element.setNext(follow);
-        return sortedSubList;
+        return result;
     }
 }
