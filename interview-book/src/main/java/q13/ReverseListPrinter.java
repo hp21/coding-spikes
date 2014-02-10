@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class ReverseListPrinter {
 
-   /* public void printReverse(List<?> list) {
+    public void printReverse(List<?> list) {
 
         final Stack<Object> stack = new Stack<Object>();
 
@@ -28,15 +28,6 @@ public class ReverseListPrinter {
         }
 
         System.out.println();
-
-    }*/
-
-    public void printReverse(List<?> list) {
-        if (list == null) {
-            return;
-        }
-
-      //  printReverse(list.);
 
     }
 
