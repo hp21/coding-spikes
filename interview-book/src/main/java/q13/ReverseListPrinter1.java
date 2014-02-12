@@ -6,7 +6,7 @@ import java.util.Stack;
 import ibook.common.LoopNode;
 
 /**
- * Created by U292148 on 2014.02.09..
+ * Created by hp21 on 2014.02.09..
  */
 public class ReverseListPrinter1 {
 
