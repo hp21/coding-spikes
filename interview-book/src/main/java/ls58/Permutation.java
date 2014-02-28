@@ -10,22 +10,25 @@ import java.util.List;
  */
 public class Permutation {
 
-    public void permute(int[] array, int k) // raw type, I know
-    {
-        for (int i = k; i < array.length; i++) {
-            int temp;
-            temp = array[i];
-            array[i] = array[k];
-            array[k] = temp;
-            permute(array, k + 1);
-            temp = array[i];
-            array[i] = array[k];
-            array[k] = temp;
+    public void permute(int[] array, int level) {
+
+        // if past last element
+        if (level == array.length) {
+            printArray(array);
+            return;
         }
 
-        if (k == array.length) {
-            printArray(array);
+        for (int i = level; i < array.length; i++) {
+            int temp;
+            temp = array[i];
+            array[i] = array[level];
+            array[level] = temp;
+            permute(array, level + 1);
+            temp = array[i];
+            array[i] = array[level];
+            array[level] = temp;
         }
+
     }
 
     private void printArray(int[] array) {

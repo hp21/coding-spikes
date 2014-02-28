@@ -18,6 +18,6 @@ public class PermutationTest {
 
     @Test
     public void testPermute() throws Exception {
-        permutation.permute(new int[] { 2, 3,4, 5 }, 0);
+        permutation.permute(new int[] { 2,3,4  }, 0);
     }
 }
