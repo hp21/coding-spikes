@@ -1,1 +1,23 @@
 http://thereq.com/q/best-java-software-interview-questions/algorithm
+
+http://www.careercup.com/
+how to print this pattern
+
+input N=4
+output :
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+
+input N=3
+output :
+33333
+32223
+32123
+32223
+33333
+
