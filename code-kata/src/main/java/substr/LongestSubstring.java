@@ -1,7 +1,10 @@
 package substr;
 
 /**
- * Created by U292148 on 2014.11.04..
+ * Created by phorvath21 on 2014.11.04..
+ * 
+ * array hold match length. dynamic programming example for longest String. see
+ * google search for java program.
  */
 public class LongestSubstring {
 
