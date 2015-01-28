@@ -8,11 +8,12 @@ import org.junit.Test;
 
 public class LongestSubstringTest {
 
-    private LongestSubstring finder;
+    private ILongestSubstring finder;
 
     @Before
     public void setUp() {
-        finder = new LongestSubstring();
+       finder = new LongestSubstring();
+//        finder = new CommonSubstring2();
     }
 
     @Test
@@ -22,7 +23,7 @@ public class LongestSubstringTest {
         //
         actual = finder.longestSubstring("asd", "a");
         assertThat(actual, equalTo("a"));
-                                         //
+        //
         actual = finder.longestSubstring("asd", "as");
         assertThat(actual, equalTo("as"));
 

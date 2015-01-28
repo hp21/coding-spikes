@@ -40,3 +40,9 @@ project('interview-book') {
         compile project(':common')
     }
 }
+
+project('code-kata') {
+    dependencies {
+        compile project(':common')
+    }
+}

@@ -6,8 +6,9 @@ package substr;
  * array hold match length. dynamic programming example for longest String. see
  * google search for java program.
  */
-public class LongestSubstring {
+public class LongestSubstring implements ILongestSubstring {
 
+    @Override
     public String longestSubstring(String text, String pattern) {
 
         final int textLength = text.length();

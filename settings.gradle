@@ -1,6 +1,6 @@
 rootProject.name = 'codechefful'
 include ':daily-train', ':reserve-list', ':cyclic-list', ':small-tasks', ':queen', ':code-kata', ':create-marshal', ':game-of-life', ':recursion', ':eval-postfix', ':finite-automata', ':sorts-buble-sort'
-include ':sorts-api', ':design-patterns','detect-loop', 'interview-book','common'
+include ':sorts-api', ':design-patterns','detect-loop', 'interview-book','common', 'euler'
 
 project(':daily-train').projectDir = "$rootDir/daily-train" as File
 project(':reserve-list').projectDir = "$rootDir/reserve-list" as File
@@ -18,3 +18,4 @@ project(':sorts-api').projectDir = "$rootDir/sorts/api" as File
 project(':design-patterns').projectDir = "$rootDir/design-patterns" as File
 project(':detect-loop').projectDir = "$rootDir/coding-freak/single-list/detect-loop" as File
 //project(':sorts').projectDir = "$rootDir/sorts" as File
+project(':euler').projectDir = "$rootDir/euler" as File
