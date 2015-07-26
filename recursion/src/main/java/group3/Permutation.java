@@ -1,7 +1,7 @@
 package group3;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,45 +9,42 @@ import java.util.List;
  */
 public class Permutation {
 
-    public static void main(String[] args) {
-        new Permutation().run();
+    public List<List<String>> permute(List<String> original) {
+        return permute1(original);
     }
 
-    private void run() {
-
-        ArrayList<Object> result = new ArrayList<Object>();
-
-        permute(new ArrayList<Object>(), Arrays.<Object>asList("0", "1", "2"), result);
-    }
-
-
-    public List<Object> permute(List<Object> selected, List<Object> original, List<Object> result) {
+    private List<List<String>> permute1(List<String> original) {
         if (original == null || original.size() == 0) {
-            result.clear();
-            return result;
+            return Collections.<List<String>>emptyList();
         }
 
-        return myPermute(selected, original, result);
+        return myPermute(new ArrayList<String>(), original);
     }
 
-    private List<Object> myPermute(List<Object> selected, List<Object> original, List<Object> result) {
+    private List<List<String>> myPermute(List<String> selected, List<String> original) {
 
         if (selected.size() == original.size()) {
-            result.add(new ArrayList<>(selected));
+            //clone selected + create result
+            List<List<String>> list = new ArrayList<>();
+            list.add(new ArrayList<String>(selected));
+            return list;
         }
 
-        for (Object elem : original) {
+        List<List<String >> myResult = new ArrayList<>();
+
+        for (String  elem : original) {
 
             if (selected.contains(elem)) {
                 continue;
             }
 
             selected.add(elem);
-            myPermute(selected, original, result);
+            List<List<String >> t = myPermute(selected, original);
+            myResult.addAll(t);
             selected.remove(elem);
         }
 
-        return result;
+        return myResult;
     }
 
 }
