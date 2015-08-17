@@ -18,10 +18,10 @@ public class Permutation {
             return Collections.<List<String>>emptyList();
         }
 
-        return myPermute(new ArrayList<String>(), original);
+        return permute(new ArrayList<String>(), original);
     }
 
-    private List<List<String>> myPermute(List<String> selected, List<String> original) {
+    public List<List<String>> permute(List<String> selected, List<String> original) {
 
         if (selected.size() == original.size()) {
             //clone selected + create result
@@ -39,7 +39,7 @@ public class Permutation {
             }
 
             selected.add(elem);
-            List<List<String >> t = myPermute(selected, original);
+            List<List<String >> t = permute(selected, original);
             myResult.addAll(t);
             selected.remove(elem);
         }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="K:/sw/gradle" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/code-kata" />
+            <option value="$PROJECT_DIR$/coding-freak/single-list/detect-loop" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/create-marshal" />
+            <option value="$PROJECT_DIR$/cyclic-list" />
+            <option value="$PROJECT_DIR$/daily-train" />
+            <option value="$PROJECT_DIR$/design-patterns" />
+            <option value="$PROJECT_DIR$/euler" />
+            <option value="$PROJECT_DIR$/eval-postfix" />
+            <option value="$PROJECT_DIR$/finite-automata" />
+            <option value="$PROJECT_DIR$/game-of-life" />
+            <option value="$PROJECT_DIR$/interview-book" />
+            <option value="$PROJECT_DIR$/queen" />
+            <option value="$PROJECT_DIR$/recursion" />
+            <option value="$PROJECT_DIR$/reserve-list" />
+            <option value="$PROJECT_DIR$/small-tasks" />
+            <option value="$PROJECT_DIR$/sorts/api" />
+            <option value="$PROJECT_DIR$/sorts/buble-sort" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

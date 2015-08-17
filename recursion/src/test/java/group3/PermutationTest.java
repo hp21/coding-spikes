@@ -33,7 +33,6 @@ public class PermutationTest {
     @Test
     public void testWithOneElementInput() throws Exception {
 
-        List<String> selected = new ArrayList<>();
         List<List<String>> actual = permutation.permute(Arrays.<String>asList("1"));
 
         assertThat(actual.size(), is(1));
@@ -44,7 +43,6 @@ public class PermutationTest {
     @Test
     public void testWithTwoElementInput() throws Exception {
 
-        List<String> selected = new ArrayList<>();
         List<List<String>> actual = permutation.permute(Arrays.<String>asList("1", "2"));
 
         assertThat(actual.size(), is(2));
@@ -55,7 +53,6 @@ public class PermutationTest {
     @Test
     public void testWith3ElementInput() throws Exception {
 
-        ArrayList<String> selected = new ArrayList<>();
         List<List<String>> actual = permutation.permute(Arrays.<String>asList("1", "2", "3"));
 
         assertThat(actual.size(), is(6));
@@ -66,7 +63,6 @@ public class PermutationTest {
     @Test
     public void testWith4ElementInput() throws Exception {
 
-        List<String> selected = new ArrayList<>();
         List<List<String>> actual = permutation.permute(Arrays.<String>asList("1", "2", "3", "4"));
 
         assertThat(actual.size(), is(24));
@@ -77,14 +73,60 @@ public class PermutationTest {
     @Test
     public void testWith5ElementInput() throws Exception {
 
-        List<String > selected = new ArrayList<>();
-        List<List<String> > actual = permutation.permute(Arrays.<String >asList("1", "2", "3", "4", "5"));
+        List<List<String>> actual = permutation.permute(Arrays.<String>asList("1", "2", "3", "4", "5"));
 
         assertThat(actual.size(), is(120));
 
         dumpResult(actual);
     }
 
+    @Test
+    public void test2WithSelectedElement() throws Exception {
+
+        List<String> selected = new ArrayList<>(Arrays.asList("1"));
+
+        List<List<String>> actual = permutation.permute(selected, Arrays.<String>asList("1"));
+
+        assertThat(actual.size(), is(1));
+
+        dumpResult(actual);
+    }
+
+    @Test
+    public void test2With1SelectedElement() throws Exception {
+
+        List<String> selected = new ArrayList<>(Arrays.asList("1"));
+
+        List<List<String>> actual = permutation.permute(selected, Arrays.<String>asList("1", "2"));
+
+        dumpResult(actual);
+        assertThat(actual.size(), is(1));
+
+    }
+
+    @Test
+    public void test4With1SelectedElement() throws Exception {
+
+        List<String> selected = new ArrayList<>(Arrays.asList("0"));
+
+        List<List<String>> actual = permutation.permute(selected, Arrays.<String>asList("0", "1", "2", "3"));
+
+        dumpResult(actual);
+        assertThat(actual.size(), is(6));
+
+    }
+
+    @Test
+    public void test5With1SelectedElement() throws Exception {
+
+        List<String> selected = new ArrayList<>(Arrays.asList("0"));
+
+        List<List<String>> actual = permutation.permute(selected, Arrays.<String>asList("0", "1", "2", "3", "4"));
+
+        dumpResult(actual);
+        assertThat(actual.size(), is(24));
+
+    }
 
     private void dumpResult(List<List<String>> result) {
         for (Object item : result) {
@@ -95,3 +137,4 @@ public class PermutationTest {
 
     }
 }
+
