@@ -2,39 +2,37 @@ package sedg.graph;
 
 import java.util.Stack;
 
-
 /******************************************************************************
- *  Compilation:  javac Graph.java        
- *  Execution:    java Graph input.txt
- *  Dependencies: Bag.java In.java StdOut.java
- *  Data files:   http://algs4.cs.princeton.edu/41graph/tinyG.txt
- *
- *  A sedg.graph, implemented using an array of sets.
- *  Parallel edges and self-loops allowed.
- *
- *  % java Graph tinyG.txt
- *  13 vertices, 13 edges 
- *  0: 6 2 1 5 
- *  1: 0 
- *  2: 0 
- *  3: 5 4 
- *  4: 5 6 3 
- *  5: 3 4 0 
- *  6: 0 4 
- *  7: 8 
- *  8: 7 
- *  9: 11 10 12 
- *  10: 9 
- *  11: 9 12 
- *  12: 11 9 
- *
- *  % java Graph mediumG.txt
- *  250 vertices, 1273 edges 
- *  0: 225 222 211 209 204 202 191 176 163 160 149 114 97 80 68 59 58 49 44 24 15 
- *  1: 220 203 200 194 189 164 150 130 107 72 
- *  2: 141 110 108 86 79 51 42 18 14 
- *  ...
- *  
+ * Compilation:  javac Graph.java
+ * Execution:    java Graph input.txt
+ * Dependencies: Bag.java In.java StdOut.java
+ * Data files:   http://algs4.cs.princeton.edu/41graph/tinyG.txt
+ * <p>
+ * A sedg.graph, implemented using an array of sets.
+ * Parallel edges and self-loops allowed.
+ * <p>
+ * % java Graph tinyG.txt
+ * 13 vertices, 13 edges
+ * 0: 6 2 1 5
+ * 1: 0
+ * 2: 0
+ * 3: 5 4
+ * 4: 5 6 3
+ * 5: 3 4 0
+ * 6: 0 4
+ * 7: 8
+ * 8: 7
+ * 9: 11 10 12
+ * 10: 9
+ * 11: 9 12
+ * 12: 11 9
+ * <p>
+ * % java Graph mediumG.txt
+ * 250 vertices, 1273 edges
+ * 0: 225 222 211 209 204 202 191 176 163 160 149 114 97 80 68 59 58 49 44 24 15
+ * 1: 220 203 200 194 189 164 150 130 107 72
+ * 2: 141 110 108 86 79 51 42 18 14
+ * ...
  ******************************************************************************/
 
 
@@ -64,7 +62,7 @@ public class Graph {
     private final int V;
     private int E;
     private Bag<Integer>[] adj;
-    
+
     /**
      * Initializes an empty sedg.graph with <tt>V</tt> vertices and 0 edges.
      * param V the number of vertices
@@ -84,7 +82,7 @@ public class Graph {
         }
     }
 
-    /**  
+    /**
      * Initializes a sedg.graph from an input stream.
      * The format is the number of vertices <em>V</em>,
      * followed by the number of edges <em>E</em>,
@@ -136,6 +134,10 @@ public class Graph {
         return V;
     }
 
+    public int getNumberOfVertices() {
+        return V();
+    }
+
     /**
      * Returns the number of edges in this sedg.graph.
      *
@@ -143,6 +145,10 @@ public class Graph {
      */
     public int E() {
         return E;
+    }
+
+    public int getNumberOfEdges() {
+        return E();
     }
 
     // throw an IndexOutOfBoundsException unless 0 <= v < V
@@ -178,6 +184,10 @@ public class Graph {
     public Iterable<Integer> adj(int v) {
         validateVertex(v);
         return adj[v];
+    }
+
+    public Iterable<Integer> getAdjacencies(int vertex) {
+        return adj(vertex);
     }
 
     /**
