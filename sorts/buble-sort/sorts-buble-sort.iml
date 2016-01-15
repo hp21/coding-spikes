@@ -15,9 +15,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="sorts-api" />
-    <orderEntry type="library" name="Gradle: com.google.guava:guava:13.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:19.0" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">
