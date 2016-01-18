@@ -5,35 +5,35 @@ import java.util.Map;
 /**
  * Created by u292148 on 2016.01.15..
  */
-public class Add implements IExpression {
+public class LessThan implements IExpression {
 
     private final IExpression left;
     private final IExpression right;
 
-    public Add(IExpression left, IExpression right) {
+    public LessThan(IExpression left, IExpression right) {
         this.left = left;
         this.right = right;
     }
 
-    public static Add create(IExpression left, IExpression right) {
-        return new Add(left, right);
+    public static LessThan create(IExpression left, IExpression right) {
+        return new LessThan(left, right);
     }
 
 
     @Override
     public IExpression reduce(Map environment) {
         if (left.isReducible()) {
-            return Add.create(left.reduce(environment), right);
+            return LessThan.create(left.reduce(environment), right);
         } else if (right.isReducible()) {
-            return Add.create(left, right.reduce(environment));
+            return LessThan.create(left, right.reduce(environment));
         } else {
-            return Number.create(((Number) left).number() + ((Number) right).number());
+            return BooleanValue.create(((Number) left).number() < ((Number) right).number());
         }
     }
 
     @Override
     public String inspect() {
-        return left.inspect() + " + " + right.inspect();
+        return left.inspect() + " < " + right.inspect();
     }
 
     @Override

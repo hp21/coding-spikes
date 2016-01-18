@@ -5,25 +5,25 @@ import java.util.Map;
 /**
  * Created by u292148 on 2016.01.15..
  */
-public class Number implements IExpression {
+public class BooleanValue implements IExpression {
 
-    private final Integer num;
+    private final Boolean value;
 
-    public Number(Integer num) {
-        this.num = num;
+    public BooleanValue(java.lang.Boolean value) {
+        this.value = value;
     }
 
-    public static Number create(Integer num) {
-        return new Number(num);
+    public static BooleanValue create(Boolean num) {
+        return new BooleanValue(num);
     }
 
-    public Integer number() {
-        return num;
+    public Boolean number() {
+        return value;
     }
 
     @Override
     public String inspect() {
-        return "" + num;
+        return "" + value;
     }
 
     @Override

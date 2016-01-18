@@ -1,6 +1,6 @@
 package expression;
 
-import com.google.common.base.MoreObjects;
+import java.util.Map;
 
 /**
  * Created by u292148 on 2016.01.15..
@@ -31,11 +31,11 @@ public class Multiply implements IExpression {
     }
 
     @Override
-    public IExpression reduce() {
+    public IExpression reduce(Map environment) {
         if (left.isReducible()) {
-            return Multiply.create(left.reduce(), right);
+            return Multiply.create(left.reduce(environment), right);
         } else if (right.isReducible()) {
-            return Multiply.create(left, right.reduce());
+            return Multiply.create(left, right.reduce(environment));
         } else {
             return Number.create(((Number) left).number() * ((Number) right).number());
         }
