@@ -128,6 +128,23 @@ public class NumberTest {
 
         machine.run();
     }
+
+    @Test
+    public void testReduceWithMachineLess2() {
+        Map<String ,IExpression> environment = new HashMap<>();
+
+        environment.put("x", Number.create(5));
+        environment.put("y", Number.create(2));
+
+        Machine m = new Machine(LessThan.create(Variable.create("x"), Add.create(Variable.create("y"), Number.create(2))), environment);
+
+        m.run();
+
+
+
+    }
+
+
     ;
 
 
