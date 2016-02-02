@@ -5,6 +5,7 @@ package codility.binarygap;
  */
 public class Solution {
 
+    int number;
 
     public int solution(int N) {
 
@@ -12,48 +13,52 @@ public class Solution {
             return 0;
         }
 
+        number = N;
+
         int zeroGap = 0;
         int zeros = 0;
 
-        String strn = Integer.toBinaryString(N);
-        int pos = 0;
+        int nextDigit = nextDigit(number);
 
-        String st = next(strn, pos);
-        pos++;
-
-        while (st != null && st.equals("1")) {
-            st = next(strn, pos);
-            pos++;
+        //skip initial 0s, not bounded by 1
+        while (number >= 0 && nextDigit == 0) {
+            nextDigit = nextDigit(number);
         }
 
-        while (st != null && st.equals("0")) {
-            zeros++;
-            st = next(strn, pos);
-            pos++;
+        //skip boundary 1s
+        while (number >= 0 && nextDigit == 1) {
+            nextDigit = nextDigit(number);
         }
 
-        while (st != null) {
+        while (number >= 0) {
 
-            switch (st) {
-                case "0":
+            switch (nextDigit) {
+                case 0:
                     zeros++;
                     break;
 
-                case "1":
+                case 1:
                     zeroGap = zeros > zeroGap ? zeros : zeroGap;
                     zeros = 0;
                     break;
             }
 
-            st = next(strn, pos);
-            pos++;
+            nextDigit = nextDigit(number);
         }
 
         return zeroGap;
     }
 
+    private int nextDigit(int N) {
+        if (number <= 0) {
+            number = -1;
+            return -1;
+        }
 
-    private String next(String strn, int pos) {
-        return pos < strn.length() ? strn.substring(pos, pos + 1) : null;
+        int digit = N % 2;
+        number /= 2;
+        return digit;
     }
+
+
 }

@@ -9,74 +9,74 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by HP21 on 2016.01.29..
  */
-public class SolutionTest {
+public class Solution3Test {
 
-    private Solution solution;
+    private Solution3 solution3;
 
     @Before
     public void setUp() throws Exception {
-        solution = new Solution();
+        solution3 = new Solution3();
     }
 
     @Test
     public void testSolution() throws Exception {
-        int actual = this.solution.solution(0);
+        int actual = this.solution3.solution(0);
 
         assertThat(actual, is(0));
     }
 
     @Test
     public void testNegative() throws Exception {
-        int actual = this.solution.solution(-2);
+        int actual = this.solution3.solution(-2);
         assertThat(actual, is(0));
     }
 
     @Test
     public void testZero() throws Exception {
-        int actual = this.solution.solution(0);
+        int actual = this.solution3.solution(0);
         assertThat(actual, is(0));
     }
 
     @Test
     public void testOne() throws Exception {
-        int actual = this.solution.solution(1);
+        int actual = this.solution3.solution(1);
         assertThat(actual, is(0));
     }
 
     @Test
     public void testTwo() throws Exception {
-        int actual = this.solution.solution(2);
+        int actual = this.solution3.solution(2);
         assertThat(actual, is(0));
     }
 
     @Test
     public void testThree() throws Exception {
-        int actual = this.solution.solution(3);
+        int actual = this.solution3.solution(3);
         assertThat(actual, is(0));
     }
 
 
     @Test
     public void testFour() throws Exception {
-        int actual = this.solution.solution(4);
+        int actual = this.solution3.solution(4);
         assertThat(actual, is(0));
     }
 
     @Test
     public void testNine() throws Exception {
-        int actual = this.solution.solution(9);
+        int actual = this.solution3.solution(9);
         assertThat(actual, is(2));
     }
 
     @Test
     public void test44() throws Exception {
-        int actual = this.solution.solution(44);
+        int actual = this.solution3.solution(44);
         assertThat(actual, is(1));
     }
 
     @Test
     public void test325() throws Exception {
-        int actual = this.solution.solution(325);
+        int actual = this.solution3.solution(325);
         assertThat(actual, is(3));
     }
 
