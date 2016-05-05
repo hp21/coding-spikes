@@ -11,36 +11,44 @@ public class Modulo {
     private static IntBinaryOperator multOp = (left, right) -> left * right;
 
     public static void main(String[] args) {
-        new Modulo().run(5, addOp);
-//        new Modulo().run(5, multOp);
+//        new Modulo().run(6, addOp);
+        new Modulo().run(5, multOp);
 
     }
 
     public void run(final int num, final IntBinaryOperator operator) {
 
-        System.out.println(String.format("num: %d, op: %s", num, operator == addOp ? " + " : " * "));
-        System.out.print("   ");
+        System.out.printf("num: %d, op: %s\n\n", num, operator == addOp ? " + " : " * ");
+        System.out.printf("%3s", operator == addOp ? "+" : "*");
 
         //headers
         for (int i = 0; i < num; i++) {
-            System.out.print(String.format("|%3d", i));
+            System.out.printf("|%3d", i);
         }
 
         System.out.println("|");
-        System.out.println(String.format(String.format("%%%ds", 4 * (num + 1)), " ").replace(" ", "-"));
+
+        separatorLine(num);
 
         for (int i = 0; i < num; i++) {
-            System.out.print(String.format("%3d|", i)); // row label
+            System.out.printf("%3d|", i); // row label
 
             for (int j = 0; j < num; j++) {
-                System.out.print(String.format("%3d|", operator.applyAsInt(i, j) % num));
+                System.out.printf("%3d|", operator.applyAsInt(i, j) % num);
             }
 
             System.out.println();
-            System.out.println(String.format(String.format("%%%ds", 4 * (num + 1)), " ").replace(" ", "-")); //separator line
 
+            separatorLine(num);
 
         }
 
+    }
+
+    private void separatorLine(final int num) {
+        for (int q = 1; q < 4 * (num + 1); q++) {
+            System.out.print(q % 4 == 0 ? "+" : "-");
+        }
+        System.out.println("+");
     }
 }
