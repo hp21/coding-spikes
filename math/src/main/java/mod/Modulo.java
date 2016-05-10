@@ -11,8 +11,8 @@ public class Modulo {
     private static IntBinaryOperator multOp = (left, right) -> left * right;
 
     public static void main(String[] args) {
-//        new Modulo().run(6, addOp);
-        new Modulo().run(5, multOp);
+        new Modulo().run(8, addOp);
+//        new Modulo().run(5, multOp);
 
     }
 
