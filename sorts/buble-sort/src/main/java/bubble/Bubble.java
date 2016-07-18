@@ -1,6 +1,7 @@
 package bubble;
 
 import api.ISort;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Bubble implements ISort {
 
@@ -44,5 +45,11 @@ public class Bubble implements ISort {
 
 
         return array;
+    }
+
+    @Override
+    public int getInversions() {
+        throw new NotImplementedException();
+//        return 0;
     }
 }

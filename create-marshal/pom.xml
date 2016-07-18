@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>codechefful</artifactId>
+        <groupId>codechef</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>create-marshal</artifactId>
+    <packaging>jar</packaging>
+
+    <name>create-marshal</name>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.2.5</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb22-plugin</artifactId>
+                <version>0.8.3</version>
+                <configuration>
+                    <schemaDirectory>src/main/resources</schemaDirectory>
+                    <generateDirectory>src/main/generated</generateDirectory>
+                    <generatePackage>org.hp.jaxb</generatePackage>
+                   <!-- <schemaIncludes>
+                        <include>
+                            po.xsd
+                        </include>
+                    </schemaIncludes>-->
+
+                    <episodeFile>src/main/resources/META-INF/sun-jaxb.episode</episodeFile>
+                    <forceRegenerate>false</forceRegenerate>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <!--<dependecies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.1</version>
+        </dependency>
+    </dependecies>-->
+</project>
