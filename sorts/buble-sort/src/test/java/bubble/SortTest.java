@@ -1,6 +1,7 @@
-package sort;
+package bubble;
 
 import api.ISort;
+import inversions.InversionsDownwards;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,10 +17,12 @@ import static org.junit.Assert.assertThat;
 public class SortTest {
 
     private ISort sorter;
+    private InversionsDownwards inversions;
 
     @Before
     public void setUp() throws Exception {
         sorter = new BubbleSort();
+        inversions = new InversionsDownwards();
 
     }
 
@@ -27,6 +30,7 @@ public class SortTest {
     public void sortNullOrEmpty() throws Exception {
 
         int[] tested = null;
+        int invcount = inversions.inversions(tested);
 
         int[] actual = sorter.sort(tested);
 
@@ -34,7 +38,7 @@ public class SortTest {
 
         tested = new int[]{};
         Assert.assertThat(sorter.sort(tested), sameInstance(tested));
-        System.out.printf("Inversions: %d\n", sorter.getInversions());
+        System.out.printf("Inversions: count=%d,computed=%d\n", invcount, sorter.getInversions());
     }
 
     @Test
@@ -63,11 +67,12 @@ public class SortTest {
     public void testWithSize2NoSort() {
 
         int[] array = new int[]{5, 6};
+        int invcount = inversions.inversions(array);
         final int[] sorted = sorter.sort(array);
 
         assertThat(sorted[0], equalTo(5));
         assertThat(sorted[1], equalTo(6));
-        System.out.printf("20 Inversions: %d\n", sorter.getInversions());
+        System.out.printf("20 Inversions: count=%d, computed%d\n", invcount, sorter.getInversions());
     }
 
 
@@ -75,18 +80,21 @@ public class SortTest {
     public void testWithSize2AndSort() {
 
         int[] array = new int[]{6, 5};
+        int invcount = inversions.inversions(array);
         final int[] sorted = sorter.sort(array);
 
         assertThat(sorted[0], equalTo(5));
         assertThat(sorted[1], equalTo(6));
 
-        System.out.printf("30 Inversions: %d\n", sorter.getInversions());
+        System.out.printf("30 Inversions: count=%d, computed=%d\n", invcount, sorter.getInversions());
     }
 
     @Test
     public void testWithSizeNSort() {
 
         int[] array = new int[]{6, 5, 10, 2, 3, 4, 1, 22};
+        int invcount = inversions.inversions(array);
+
         final int[] sorted = sorter.sort(array);
 
         assertThat(sorted[0], equalTo(1));
@@ -98,12 +106,14 @@ public class SortTest {
         assertThat(sorted[6], equalTo(10));
         assertThat(sorted[7], equalTo(22));
 
-        System.out.printf("40 Inversions: %d\n", sorter.getInversions());
+        System.out.printf("40 Inversions:count=%d, computed=%d\n", invcount, sorter.getInversions());
     }
 
+    @Test
     public void testWithSizeNAndNoSort() {
 
         int[] array = new int[]{1, 2, 3, 4, 5, 6, 10, 22};
+        int invcount = inversions.inversions(array);
         final int[] sorted = sorter.sort(array);
 
         assertThat(sorted[0], equalTo(1));
@@ -115,7 +125,7 @@ public class SortTest {
         assertThat(sorted[6], equalTo(10));
         assertThat(sorted[7], equalTo(22));
 
-        System.out.printf("50 Inversions: %d\n", sorter.getInversions());
+        System.out.printf("50 Inversions:count=%d, computed=%d\n", invcount, sorter.getInversions());
     }
 
 }

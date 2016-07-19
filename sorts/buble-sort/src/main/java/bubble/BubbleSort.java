@@ -1,4 +1,4 @@
-package sort;
+package bubble;
 
 import api.ISort;
 
@@ -10,7 +10,7 @@ public class BubbleSort implements ISort {
     ThreadLocal<Integer> inversions = new InheritableThreadLocal<>();
 
     public BubbleSort() {
-       inversions.set(0);
+        inversions.set(0);
     }
 
     @Override
