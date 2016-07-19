@@ -3,6 +3,8 @@ package bubble;
 import api.ISort;
 import inversions.InversionsDownwards;
 
+import java.util.Arrays;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -80,7 +82,11 @@ public class SortTest {
     public void testWithSize2AndSort() {
 
         int[] array = new int[]{6, 5};
+
+
         int invcount = inversions.inversions(array);
+        System.out.printf("30 Inversion vector: ", Arrays.toString(inversions.vector()));
+
         final int[] sorted = sorter.sort(array);
 
         assertThat(sorted[0], equalTo(5));
@@ -94,6 +100,7 @@ public class SortTest {
 
         int[] array = new int[]{6, 5, 10, 2, 3, 4, 1, 22};
         int invcount = inversions.inversions(array);
+        System.out.printf("40 Inversion vector: %s\n", Arrays.toString(inversions.vector()));
 
         final int[] sorted = sorter.sort(array);
 

@@ -6,4 +6,6 @@ package api;
 public interface IInversion {
 
     public int inversions(int[] array);
+
+    public int[] vector();
 }
