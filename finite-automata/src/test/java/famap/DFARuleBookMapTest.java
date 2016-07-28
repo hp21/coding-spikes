@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created User: Peter Horvath/u292148 Date: 2013.07.05. Time: 19:48
+ * Created User: Peter Horvath/hp21 Date: 2013.07.05. Time: 19:48
  */
 public class DFARuleBookMapTest {
 

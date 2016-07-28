@@ -10,7 +10,7 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 /**
- * Created by u292148 on 2016.07.19..
+ * Created by hp21 on 2016.07.19..
  */
 public class InversionsTest {
 

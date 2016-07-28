@@ -1,7 +1,7 @@
 package sicp;
 
 /**
- * Created by U292148 on 2014.11.28..
+ * Created by hp21 on 2014.11.28..
  */
 public class Accumulator implements IAccumulator {
     @Override

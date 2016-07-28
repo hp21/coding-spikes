@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 /**
- * Created by U292148 on 2014.11.05..
+ * Created by hp21 on 2014.11.05..
  */
 public class CommonSubstring2 implements ILongestSubstring {
 

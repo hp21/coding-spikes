@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.junit.Assert.assertThat;
 
 /**
- * Created by U292148 on 2014.02.12..
+ * Created by hp21 on 2014.02.12..
  */
 public class StrSortTest {
 

@@ -3,7 +3,7 @@ package recursion;
 import static java.lang.Math.abs;
 
 /**
- * Created with IntelliJ IDEA. User: u292148 Date: 2013.05.23. Time: 12:41 To
+ * Created with IntelliJ IDEA. User: hp21 Date: 2013.05.23. Time: 12:41 To
  * change this template use File | Settings | File Templates.
  */
 public class Sum {

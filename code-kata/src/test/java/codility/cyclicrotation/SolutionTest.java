@@ -10,7 +10,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.sameInstance;
 
 /**
- * Created by U292148 on 2016.02.02..
+ * Created by hp21 on 2016.02.02..
  */
 public class SolutionTest {
 

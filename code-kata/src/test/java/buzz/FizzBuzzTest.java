@@ -9,7 +9,7 @@ import org.junit.Test;
 import fizzbuzz.FizzBuzz;
 
 /**
- * Created with IntelliJ IDEA. User: u292148 Date: 2013.05.16. Time: 13:44 To
+ * Created with IntelliJ IDEA. User: hp21 Date: 2013.05.16. Time: 13:44 To
  * change this template use File | Settings | File Templates.
  */
 public class FizzBuzzTest {

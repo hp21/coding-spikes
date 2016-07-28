@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * Created by U292148 on 2015.09.08..
+ * Created by hp21 on 2015.09.08..
  */
 public class GreedyQueenTest {
 

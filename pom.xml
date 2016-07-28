@@ -35,6 +35,7 @@
         <module>reserve-list</module>
         <module>small-tasks</module>
         <module>sorts</module>
+        <module>spikes</module>
     </modules>
 
 

@@ -6,7 +6,7 @@ import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 /**
- * Created User: Peter Horvath/u292148 Date: 2013.07.09. Time: 13:04
+ * Created User: Peter Horvath/hp21 Date: 2013.07.09. Time: 13:04
  */
 public class PDAStackTest {
 

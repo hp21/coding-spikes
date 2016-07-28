@@ -3,7 +3,7 @@ package sp;
 import java.math.BigDecimal;
 
 /**
- * Created by U292148 on 2016.05.10..
+ * Created by hp21 on 2016.05.10..
  */
 public class Infimum {
     private static final int RRR = 18;

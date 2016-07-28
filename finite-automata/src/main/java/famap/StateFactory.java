@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created User: Peter Horvath/u292148 Date: 2013.07.06. Time: 17:38
+ * Created User: Peter Horvath/hp21 Date: 2013.07.06. Time: 17:38
  */
 public class StateFactory implements IStateFactory {
 

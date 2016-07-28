@@ -1,9 +1,6 @@
 package powersets;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
@@ -13,44 +10,45 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * Created by u292148 on 2016.07.21..
+ * Created by hp21 on 2016.07.21..
  */
 public class PowerSetTest {
 
-    private PowerSet powerset;
+    private IPowerSet powerset;
 
     @Before
     public void setUp() throws Exception {
-        powerset = new PowerSet();
+//        powerset = new PowerSet();
+        powerset = new PowerSet2();
 
     }
 
     @Test
     public void powerSetWithNull() throws Exception {
 
-        Set<Set<Integer>> actual = powerset.<Integer>powerSet(null);
+        Set<List<Integer>> actual = powerset.<Integer>powerSet(null);
         assertThat(actual, CoreMatchers.nullValue());
     }
 
     @Test
     public void powerSetWithEmpty() throws Exception {
 
-        Set<Set<Integer>> actual = powerset.powerSet(Collections.emptySet());
+        Set<List<Integer>> actual = powerset.powerSet(Collections.emptyList());
         assertThat(actual.size(), is(1));
     }
 
     @Test
     public void powerSetWithOneElement() throws Exception {
 
-        Set<Integer> inp = new HashSet<>(Arrays.asList(2));
+        List<Integer> inp = Arrays.asList(2);
 
-        Set<Set<Integer>> actual = powerset.powerSet(inp);
+        Set<List<Integer>> actual = powerset.powerSet(inp);
         assertThat(actual.size(), is(2));
 
         int elements0 = 0;
         int elements1 = 0;
 
-        for (Set<Integer> a : actual) {
+        for (List<Integer> a : actual) {
             elements0 = a.size() == 0 ? elements0 + 1 : elements0;
             elements1 = a.size() == 1 ? elements1 + 1 : elements1;
         }
@@ -66,16 +64,16 @@ public class PowerSetTest {
     @Test
     public void powerSetWithTwoElement() throws Exception {
 
-        Set<Integer> inp = new HashSet<>(Arrays.asList(2, 3));
+        List<Integer> inp = Arrays.asList(2, 3);
 
-        Set<Set<Integer>> actual = powerset.powerSet(inp);
+        Set<List<Integer>> actual = powerset.powerSet(inp);
         assertThat(actual.size(), is(4));
 
         int elements0 = 0;
         int elements1 = 0;
         int elements2 = 0;
 
-        for (Set<Integer> a : actual) {
+        for (List<Integer> a : actual) {
             elements0 = a.size() == 0 ? elements0 + 1 : elements0;
             elements1 = a.size() == 1 ? elements1 + 1 : elements1;
             elements2 = a.size() == 2 ? elements2 + 1 : elements2;
@@ -87,6 +85,7 @@ public class PowerSetTest {
         assertThat(elements2, is(1));
 
 
+
         System.out.println("2: " + actual);
     }
 
@@ -94,9 +93,10 @@ public class PowerSetTest {
     @Test
     public void powerSetWith4Element() throws Exception {
 
-        Set<Integer> inp = new HashSet<>(Arrays.asList(4, 5, 6, 7));
+        List<Integer> inp = Arrays.asList(4, 5, 6, 7);
 
-        Set<Set<Integer>> actual = powerset.powerSet(inp);
+        Set<List<Integer>> actual = powerset.powerSet(inp);
+        System.out.println("2: " + actual);
         assertThat(actual.size(), is(16));
 
 
@@ -106,7 +106,7 @@ public class PowerSetTest {
         int elements3 = 0;
         int elements4 = 0;
 
-        for (Set<Integer> a : actual) {
+        for (List<Integer> a : actual) {
             elements0 = a.size() == 0 ? elements0 + 1 : elements0;
             elements1 = a.size() == 1 ? elements1 + 1 : elements1;
             elements2 = a.size() == 2 ? elements2 + 1 : elements2;

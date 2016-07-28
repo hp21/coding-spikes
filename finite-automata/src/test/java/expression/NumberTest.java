@@ -9,7 +9,7 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 /**
- * Created by u292148 on 2016.01.15..
+ * Created by hp21 on 2016.01.15..
  */
 public class NumberTest {
 

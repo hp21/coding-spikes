@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created with IntelliJ IDEA. User: u292148 Date: 2013.05.31. Time: 12:55 To
+ * Created with IntelliJ IDEA. User: hp21 Date: 2013.05.31. Time: 12:55 To
  * change this template use File | Settings | File Templates.
  */
 public class PalindromeTest {

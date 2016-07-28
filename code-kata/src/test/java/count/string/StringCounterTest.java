@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created with IntelliJ IDEA. User: U292148 Date: 2013.10.16. Time: 21:10 To
+ * Created with IntelliJ IDEA. User: hp21 Date: 2013.10.16. Time: 21:10 To
  * change this template use File | Settings | File Templates.
  */
 public class StringCounterTest {

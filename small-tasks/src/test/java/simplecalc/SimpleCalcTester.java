@@ -9,7 +9,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * Created with IntelliJ IDEA. User: u292148 Date: 2013.05.08. Time: 8:40 To
+ * Created with IntelliJ IDEA. User: hp21 Date: 2013.05.08. Time: 8:40 To
  * change this template use File | Settings | File Templates.
  */
 public class SimpleCalcTester {

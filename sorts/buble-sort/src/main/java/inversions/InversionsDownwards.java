@@ -3,7 +3,7 @@ package inversions;
 import api.IInversion;
 
 /**
- * Created by u292148 on 2016.07.19..
+ * Created by hp21 on 2016.07.19..
  */
 public class InversionsDownwards implements IInversion {
 

@@ -1,7 +1,7 @@
 package codility.binarygap;
 
 /**
- * Created by U292148 on 2016.01.29..
+ * Created by hp21 on 2016.01.29..
  */
 public class Solution {
 

@@ -1,7 +1,7 @@
 package recursion;
 
 /**
- * Created with IntelliJ IDEA. User: u292148 Date: 2013.05.26. Time: 11:09 To
+ * Created with IntelliJ IDEA. User: hp21 Date: 2013.05.26. Time: 11:09 To
  * change this template use File | Settings | File Templates.
  */
 public class FindInOrderedArray {

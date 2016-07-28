@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Created by U292148 on 2014.02.09..
+ * Created by hp21 on 2014.02.09..
  */
 public class ReverseListPrinter {
 

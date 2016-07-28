@@ -3,7 +3,7 @@ package pda;
 import java.util.List;
 
 /**
- * Created User: Peter Horvath/u292148 Date: 2013.07.09. Time: 13:19
+ * Created User: Peter Horvath/hp21 Date: 2013.07.09. Time: 13:19
  */
 public class PDARule {
     private PDAState state;

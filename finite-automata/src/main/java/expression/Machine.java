@@ -3,7 +3,7 @@ package expression;
 import java.util.Map;
 
 /**
- * Created by u292148 on 2016.01.15..
+ * Created by hp21 on 2016.01.15..
  */
 public class Machine {
 

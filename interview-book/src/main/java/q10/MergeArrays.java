@@ -1,7 +1,7 @@
 package q10;
 
 /**
- * Created by U292148 on 2013.12.11..
+ * Created by hp21 on 2013.12.11..
  */
 public class MergeArrays {
 

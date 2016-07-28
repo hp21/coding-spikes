@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 /**
- * Created User: Peter Horvath/u292148
+ * Created User: Peter Horvath/hp21
  * Date: 2013.07.05. Time: 19:48
  */
 public class DFARuleBookTest {

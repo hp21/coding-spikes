@@ -1,7 +1,7 @@
 package recursion;
 
 /**
- * Created with IntelliJ IDEA. User: u292148 Date: 2013.05.23. Time: 15:45 To
+ * Created with IntelliJ IDEA. User: hp21 Date: 2013.05.23. Time: 15:45 To
  * change this template use File | Settings | File Templates.
  */
 public class FindMin {

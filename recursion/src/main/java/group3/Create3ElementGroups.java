@@ -1,7 +1,7 @@
 package group3;
 
 /**
- * Created by U292148 on 2015.07.17..
+ * Created by hp21 on 2015.07.17..
  */
 public class Create3ElementGroups {
 

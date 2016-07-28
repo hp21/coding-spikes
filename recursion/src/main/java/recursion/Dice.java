@@ -6,7 +6,7 @@ import java.util.Random;
 import com.google.common.collect.Lists;
 
 /**
- * User: u292148 Date: 2013.06.10. Time: 12:22
+ * User: hp21 Date: 2013.06.10. Time: 12:22
  */
 public class Dice {
 

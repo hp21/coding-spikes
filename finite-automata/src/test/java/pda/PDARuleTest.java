@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Created User: Peter Horvath/u292148 Date: 2013.07.09. Time: 13:27
+ * Created User: Peter Horvath/hp21 Date: 2013.07.09. Time: 13:27
  */
 public class PDARuleTest {
 

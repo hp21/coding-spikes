@@ -3,7 +3,7 @@ package ternary;
 import tst.TernaryNode;
 
 /**
- * Created by U292148 on 2014.11.11..
+ * Created by hp21 on 2014.11.11..
  */
 public class StringSearch {
 

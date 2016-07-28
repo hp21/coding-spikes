@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by U292148 on 2015.09.13..
+ * Created by hp21 on 2015.09.13..
  */
 public class BacktrackingNQueens {
 
