@@ -45,4 +45,8 @@ public class LongestSubstringTest {
         actual = finder.longestSubstring("asdaqweasdqweraa", "bbqwezz");
         assertThat(actual, equalTo("qwe"));
     }
+
+
+
+
 }
