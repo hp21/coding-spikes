@@ -19,14 +19,14 @@ import static org.junit.Assert.assertThat;
  */
 public class SortTest {
 
-    public static final int INTS = 1000000;
+    public static final int INTS = 10000000;
     private ISort sorter;
     private InversionsDownwards inversions;
 
     @Before
     public void setUp() throws Exception {
-//        sorter = new BubbleSort();
-        sorter = new MergeSort();
+        sorter = new BubbleSort();
+//        sorter = new MergeSort();
         inversions = new InversionsDownwards();
 
     }

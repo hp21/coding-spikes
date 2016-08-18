@@ -20,15 +20,15 @@ public class Sum1 {
     public static void main(String[] args) {
         double result = new Sum1(args[0]).run();
 
-        System.out.printf("Result %d\n", result);
+        System.out.printf("Result %f\n", result);
     }
 
     private double run() {
 
         double val = 0L;
 
-        for (long i = 0; i < num; i++) {
-            val = +1 / i;
+        for (long i = 1; i < num; i++) {
+            val = +1.00 / i;
         }
 
         return val;

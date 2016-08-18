@@ -2,10 +2,17 @@ package mergesort;
 
 import api.ISort;
 
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 /**
  * Created by u292148 on 2016.07.28..
  */
 public class MergeSort implements ISort {
+
+    ExecutorService executor = Executors.newFixedThreadPool(20);
+
+    private AtomicBoolean started = new AtomicBoolean(false);
 
     @Override
     public int[] sort(final int[] array) {
@@ -14,7 +21,10 @@ public class MergeSort implements ISort {
             return array;
         }
 
-        return mySort(array, 0, array.length - 1);
+        int[] result = mySort(array, 0, array.length - 1);
+
+        executor.shutdownNow();
+        return result;
     }
 
     private int[] mySort(final int[] array, final int low, final int high) {
@@ -25,8 +35,31 @@ public class MergeSort implements ISort {
 
         int middle = (low + high) / 2;
 
-        int[] lowPart = mySort(array, low, middle);
-        int[] highPart = mySort(array, middle + 1, high);
+        int[] lowPart;
+        int[] highPart;
+
+//        if (   !started.getAndSet(true)) {
+        if (low == 0 && high == array.length - 1) {
+            Callable<int[]> lowTask = () -> mySort(array, low, middle);
+            Callable<int[]> highTask = () -> mySort(array, low, middle);
+
+            Future<int[]> futureLow = executor.submit(lowTask);
+            Future<int[]> futureHigh = executor.submit(highTask);
+
+            try {
+                lowPart = futureLow.get();
+                highPart = futureHigh.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+                throw new RuntimeException();
+            }
+
+        } else {
+
+            lowPart = mySort(array, low, middle);
+            highPart = mySort(array, middle + 1, high);
+        }
+
 
         return merge(lowPart, highPart);
     }
