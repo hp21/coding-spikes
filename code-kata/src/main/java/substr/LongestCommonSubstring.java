@@ -6,10 +6,10 @@ package substr;
  * array hold match length. dynamic programming example for longest String. see
  * google search for java program.
  */
-public class LongestSubstring implements ILongestSubstring {
+public class LongestCommonSubstring implements ILongestCommonSubstring {
 
     @Override
-    public String longestSubstring(String text, String pattern) {
+    public String longestCommonSubstring(String text, String pattern) {
 
         final int textLength = text.length();
         final int patternLength = pattern.length();

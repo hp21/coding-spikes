@@ -15,7 +15,6 @@ public class LongestPrefixTest {
     @Before
     public void setUp() throws Exception {
         prefixer = new LongestPrefix();
-
     }
 
     @Test

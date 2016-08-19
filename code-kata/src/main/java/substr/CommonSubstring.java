@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * Created by hp21 on 2014.11.05..
  */
-public class CommonSubstring2 implements ILongestSubstring2 {
+public class CommonSubstring implements ILongestSubstring {
 
     private LongestPrefix prefix = new LongestPrefix();
 
