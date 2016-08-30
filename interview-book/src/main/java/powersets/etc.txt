@@ -2,3 +2,75 @@ Chapter about recursion
 Cracking coding interview
 
 Write a method that returns all subsets of a set
+
+
+pwerset of
+
+X={a,b,c,d,e,f}
+
+T= {X, 0, {a}, {c,d}, {a,c,d}, {b,c,d,e,f} }
+
+[a] open, closed ({a}c in T)
+[a, d, e] neither open nor closed
+[] open, closed
+[b] neither open nor closed
+[b, c] neither open nor closed
+[c] neither open nor closed
+[c, d, e] neither open nor closed
+[b, d] neither open nor closed
+[a, d, f] neither open nor closed
+[d] neither open nor closed
+[b, e] neither open nor closed
+[e] neither open nor closed
+[b, f] neither open nor closed
+[c, d, f] neither open nor closed
+[f] open
+[b, c, d, e, f]  open closed
+[a, b, c, e, f] neither open nor closed
+[a, c, d, f] neither open nor closed
+[a, c, d, e] neither open nor closed
+[b, c, e, f] neither open nor closed
+[a, e, f] neither open nor closed
+[c, d] open
+[c, e, f] neither open nor closed
+[b, c, e] neither open nor closed
+[c, e] neither open nor closed
+[b, c, d] neither open nor closed
+[c, f] neither open nor closed
+[b, c, f] neither open nor closed
+[b, c, d, f] neither open nor closed
+[a, b, e, f] closed
+[a, b, c, d, f]neither open nor closed
+[a, b, c, d, e] neither open nor closed
+[a, d, e, f] neither open nor closed
+[b, c, d, e] neither open nor closed
+[a, b, c] neither open nor closed
+[d, e] neither open nor closed
+[b, d, f] neither open nor closed
+[a, b, e] neither open nor closed
+[d, f] neither open nor closed
+[b, d, e] neither open nor closed
+[a, b, d] neither open nor closed
+[a, b, f] neither open nor closed
+[b, d, e, f] neither open nor closed
+[a, b, d, e] neither open nor closed
+[a, b, d, e, f] neither open nor closed
+[a, b, c, d, e, f]  open closed
+[a, b, d, f]
+[a, c, d] open
+[a, c, f] neither open nor closed
+[e, f]
+[a, b]
+[b, e, f]
+[a, c, e]
+[a, c]
+[a, d]
+[d, e, f]
+[a, e]
+[a, f]
+[a, c, d, e, f]
+[a, b, c, d]
+[a, b, c, f]
+[a, c, e, f]
+[a, b, c, e]
+[c, d, e, f]]

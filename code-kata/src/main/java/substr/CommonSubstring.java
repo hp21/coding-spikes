@@ -1,6 +1,6 @@
 package substr;
 
-import prefix.LongestPrefix;
+import prefix.LongestPrefixLength;
 
 import java.util.Arrays;
 
@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class CommonSubstring implements ILongestSubstring {
 
-    private LongestPrefix prefix = new LongestPrefix();
+    private LongestPrefixLength prefix = new LongestPrefixLength();
 
     private boolean debug = false;
 
@@ -37,7 +37,7 @@ public class CommonSubstring implements ILongestSubstring {
         int suffixIndex = -1;
 
         for (int i = 0; i < textLength - 1; i++) {
-            int len = prefix.longestPrefix(suffixes[i], suffixes[i + 1]);
+            int len = prefix.longestPrefixLength(suffixes[i], suffixes[i + 1]);
             if (len > maxLen) {
                 maxLen = len;
                 suffixIndex = i;

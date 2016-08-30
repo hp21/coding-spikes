@@ -10,26 +10,28 @@ import static org.junit.Assert.assertThat;
  * Created by U292148 on 2016.08.18..
  */
 public class LongestPrefixTest {
-    private LongestPrefix prefixer;
+    private LongestPrefixLength prefixer;
+    private LongestPrefixString prefixerString;
 
     @Before
     public void setUp() throws Exception {
-        prefixer = new LongestPrefix();
+        prefixer = new LongestPrefixLength();
+        prefixerString = new LongestPrefixString();
     }
 
     @Test
     public void longestPrefixwithEmpties() throws Exception {
 
-        int actual = prefixer.longestPrefix(null, null);
+        int actual = prefixer.longestPrefixLength(null, null);
         assertThat(actual, is(0));
 
-        actual = prefixer.longestPrefix(null, "asd");
+        actual = prefixer.longestPrefixLength(null, "asd");
         assertThat(actual, is(0));
 
-        actual = prefixer.longestPrefix("qqq", "");
+        actual = prefixer.longestPrefixLength("qqq", "");
         assertThat(actual, is(0));
 
-        actual = prefixer.longestPrefix("", "a");
+        actual = prefixer.longestPrefixLength("", "a");
         assertThat(actual, is(0));
 
     }
@@ -37,26 +39,47 @@ public class LongestPrefixTest {
     @Test
     public void longestPrefixwith1Char() throws Exception {
 
-        int actual = prefixer.longestPrefix("asdf", "q");
+        int actual = prefixer.longestPrefixLength("asdf", "q");
         assertThat(actual, is(0));
 
-        actual = prefixer.longestPrefix("asdf", "a");
+        actual = prefixer.longestPrefixLength("asdf", "a");
         assertThat(actual, is(1));
+    }
 
-        actual = prefixer.longestPrefix("asdf", "a");
+    @Test
+    public void longestPrefixwith1CharStrings() throws Exception {
+
+        String actual = prefixerString.longestPrefix("asdf", "q");
+        assertThat(actual, is(""));
+
+        actual = prefixerString.longestPrefix("asdf", "a");
+        assertThat(actual, is("a"));
     }
 
     @Test
     public void longestPrefixwithMoreChars() throws Exception {
 
-        int actual = prefixer.longestPrefix("asdf", "as");
+        int actual = prefixer.longestPrefixLength("asdf", "as");
         assertThat(actual, is(2));
 
-        actual = prefixer.longestPrefix("asdf", "asdf");
+        actual = prefixer.longestPrefixLength("asdf", "asdf");
         assertThat(actual, is(4));
 
-        actual = prefixer.longestPrefix("asdf", "asqqq");
+        actual = prefixer.longestPrefixLength("asdf", "asqqq");
         assertThat(actual, is(2));
+    }
+
+    @Test
+    public void longestPrefixwithMoreCharsStrings() throws Exception {
+
+        String actual = prefixerString.longestPrefix("asdf", "as");
+        assertThat(actual, is("as"));
+
+        actual = prefixerString.longestPrefix("asdf", "asdf");
+        assertThat(actual, is("asdf"));
+
+        actual = prefixerString.longestPrefix("asdf", "asqqq");
+        assertThat(actual, is("as"));
     }
 
 }

@@ -18,8 +18,8 @@ public class PowerSetTest {
 
     @Before
     public void setUp() throws Exception {
-//        powerset = new PowerSet();
-        powerset = new PowerSet2();
+        powerset = new PowerSet<Integer>();
+//        powerset = new PowerSet2<Integer>();
 
     }
 

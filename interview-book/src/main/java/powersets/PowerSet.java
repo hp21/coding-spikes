@@ -2,21 +2,19 @@ package powersets;
 
 import java.util.*;
 
-import com.sun.javafx.collections.SetListenerHelper;
-
 /**
  * Created by hp21 on 2016.07.21..
  */
-public class PowerSet implements IPowerSet {
+public class PowerSet<T> implements IPowerSet<T> {
 
 
     @Override
-    public Set<List<Integer>> powerSet(final List<Integer> mySet) {
+    public Set<List<T>> powerSet(final List<T> mySet) {
 
-       return powerSetInt(mySet);
+        return powerSetInt(mySet);
     }
 
-    public Set<List<Integer>> powerSetInt(List<Integer> mySet) {
+    public Set<List<T>> powerSetInt(List<T> mySet) {
 
         if (mySet == null) {
             return null;
@@ -26,14 +24,14 @@ public class PowerSet implements IPowerSet {
             return createEmptyResult();
         }
 
-        Set<List<Integer>> result = new HashSet<>();
+        Set<List<T>> result = new HashSet<>();
         result.add(mySet);
 
         mySet.forEach(item ->
                 {
-                    List<Integer> newSet = new ArrayList<>(mySet);
+                    List<T> newSet = new ArrayList<>(mySet);
                     newSet.remove(item);
-                    Set<List<Integer>> partialResult = powerSetInt(newSet);
+                    Set<List<T>> partialResult = powerSetInt(newSet);
                     result.addAll(partialResult);
                 }
         );
@@ -41,8 +39,8 @@ public class PowerSet implements IPowerSet {
         return result;
     }
 
-    private Set<List<Integer>> createEmptyResult() {
-        Set<List<Integer>> q = new HashSet<>();
+    private Set<List<T>> createEmptyResult() {
+        Set<List<T>> q = new HashSet<>();
         q.add(Collections.emptyList());
         return q;
     }
