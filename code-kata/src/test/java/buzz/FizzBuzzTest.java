@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import fizzbuzz.FizzBuzz;
@@ -64,6 +65,7 @@ public class FizzBuzzTest {
         Assert.assertThat(actual, equalTo("buzz"));
     }
 
+    @Ignore
     @Test
     public void test_15() {
         final String actual = fizzBuzz.fizzBuzz(15);

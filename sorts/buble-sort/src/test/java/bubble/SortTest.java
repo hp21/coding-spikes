@@ -9,6 +9,7 @@ import java.util.Random;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.*;
@@ -139,6 +140,7 @@ public class SortTest {
     }
 
     @Test
+    @Ignore
     public void testWithSize1000000AndRandomSort() {
 
         Random r = new Random();
