@@ -7,11 +7,13 @@ import java.util.function.IntBinaryOperator;
  */
 public class Modulo {
 
-    private static IntBinaryOperator addOp = (left, right) -> left + right;
+    public static final int MODULO = 24;
+
+    private static IntBinaryOperator addOp = ( left, right) -> left + right;
     private static IntBinaryOperator multOp = (left, right) -> left * right;
 
     public static void main(String[] args) {
-        new Modulo().run(8, addOp);
+        new Modulo().run( MODULO, addOp);
 //        new Modulo().run(5, multOp);
 
     }
