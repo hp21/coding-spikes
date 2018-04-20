@@ -10,11 +10,15 @@ public class Node<T> {
     public Node() {
     }
 
-    public Node(T data) {
-        this(null, null, null, data);
+    public Node( T data ) {
+        this( null, null, null, data );
     }
 
-    public Node(Node<T> left, Node<T> parent, Node<T> right, T data) {
+    public Node( Node<T> parent, T data ) {
+        this( null, parent, null, data );
+    }
+
+    public Node( Node<T> left, Node<T> parent, Node<T> right, T data ) {
         this.left = left;
         this.parent = parent;
         this.right = right;
@@ -25,7 +29,7 @@ public class Node<T> {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData( T data ) {
         this.data = data;
     }
 
@@ -33,7 +37,7 @@ public class Node<T> {
         return left;
     }
 
-    public void setLeft(Node<T> left) {
+    public void setLeft( Node<T> left ) {
         this.left = left;
     }
 
@@ -41,7 +45,7 @@ public class Node<T> {
         return parent;
     }
 
-    public void setParent(Node<T> parent) {
+    public void setParent( Node<T> parent ) {
         this.parent = parent;
     }
 
@@ -49,7 +53,7 @@ public class Node<T> {
         return right;
     }
 
-    public void setRight(Node<T> right) {
+    public void setRight( Node<T> right ) {
         this.right = right;
     }
 

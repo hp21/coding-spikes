@@ -7,6 +7,8 @@ import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import tree.Node;
 
 /**
@@ -32,11 +34,14 @@ public class BuildTreePostFixTest {
     }
 
     @Test
-    public void buildTreeTest2() {
+    public void buildTreeTest2() throws JsonProcessingException {
         final Node<String> actual = postfix.buildTree("6 7 +");
         assertThat(actual.getData(), equalTo("+"));
         assertThat(actual.getLeft().getData(), equalTo("6"));
         assertThat(actual.getRight().getData(), equalTo("7"));
+
+//        System.out.println(actual);
+//        System.out.println(new ObjectMapper(  ).writeValueAsString( actual ));
 
         assertThat(postfix.evaluate(actual), equalTo(13L));
     }
